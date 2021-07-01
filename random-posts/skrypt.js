@@ -122,7 +122,7 @@ const dt = new Date();
 
 const post = {
 	'tytul' : 'Random Post',
-	'obrazek' : '../przykladowe-zdjecie.png',
+	'obrazek' : 'przykladowe-zdjecie.png',
 	'autor' : 'Author',
 	'data' : dt.getFullYear() + '-' + ('0' + (dt.getMonth() + 1)).slice(-2) + '-' + ('0' + dt.getDate()).slice(-2),
 	'komenty' : 5,

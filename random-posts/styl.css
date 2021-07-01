@@ -24,6 +24,9 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .wysuwany.klik svg.prawo {transform:rotate(180deg);}
 #wczytaj.podswietl {transition:background 1s;background:red;}
 
+#widzety .kutas a {display:block;color:white;text-decoration:none;padding:3px 0;border-bottom:1px dotted white;}
+#widzety .kutas a:hover {text-decoration:underline;}
+
 .inpot {margin-bottom:10px;}
 .inpot input {padding:2px 4px;border:2px inset gray;font-size:16px;width:100%;}
 .inpot input:focus {outline:none;border:3px inset gray;padding:1px 3px;}

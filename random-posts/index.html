@@ -1,0 +1,450 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Random Posts Widget For Blogger</title>
+		<meta name="description" content="A highly customizable Blogger widget that will allow you to display random posts from your blog.">
+		<meta name="keywords" content="random posts blogger widget blogspot gadget plugin javascript code generator">
+		<meta property="og:title" content="Random Posts Widget For Blogger">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://bloggerwidgets.github.io/random-posts">
+        <meta property="og:description" content="A highly customizable Blogger widget that will allow you to display random posts from your blog.">
+		<link rel="icon" type="image/png" href="random-posts-logo.png"/>
+		<link href="styl.css" rel="stylesheet">
+		
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Brygada+1918&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+		<header>
+			<div class="naglowek-diw">
+				<img src="random-posts-blogger-widget-logo.png" alt="Blogger Random Posts" title="Random Posts Widget For Blogger">
+				<h1>Random Posts Widget For Blogger</h1>
+				<div class="opis-strony"><span class="linia1">A highly customizable Blogger widget that will allow you to display</span> random posts from your blog.</div>
+			</div>
+		</header>
+		
+		<div class="strona">
+		
+			<div id="menu">
+				<span id="zainstaluj" class="menu-opcja" title="Install Random Posts Widget on Your Blogger Blog">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="glowny"><path d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"></path></svg>Install<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="prawo"><path d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+				</span>
+				<span id="pokazKod" class="menu-opcja wysuwany" title="Show the widget code that you can paste anywhere on your blog to return random posts">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="glowny"><path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"></path></svg>Code<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="prawo"><path d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+					<div class="wysun" title="">
+						<div class="kutas">
+							<textarea id="kodWidzetu" readonly></textarea>
+							<div style="display:flex;margin-top:5px;">
+								<span id="skopiuj" class="guzik" title="Copy the Widget Code to the clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>Copy</span>
+								<span id="pobierzKod" class="guzik" title="Download the Widget Code to the disk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>Download</span>
+							</div>
+						</div>
+					</div>
+				</span>
+				<span id="zapisz" class="menu-opcja wysuwany">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="glowny"><path d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"></path></svg>Save<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="prawo"><path d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+					<div class="wysun">
+						<div class="kutas">
+							<div class="wysNaz">Name the record:</div>
+							<div class="inpot"><input id="nazwaDoZapisu" type="text"></div>
+							<div style="display:flex;">
+								<span id="zapiszWidzeta" class="guzik nieaktywny" title="Save in the browser storage"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"></path></svg>Save</span>
+								<span id="pobierzWidzeta" class="guzik nieaktywny" title="Download to disk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>Download</span>
+							</div>
+						</div>
+					</div>
+				</span>
+				<span id="wczytaj" class="menu-opcja wysuwany">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="glowny"><path d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>Load<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="prawo"><path d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+					<div class="wysun">
+						<div class="kutas kutas2">
+							<div class="wysNaz">Your saved widgets:</div>
+							<div id="zapisane"></div>
+							<label>
+								<input id="wgrajZDysku" type="file" accept=".json">
+								<span class="guzik"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>Upload from disk</span>
+							</label>
+						</div>
+					</div>
+				</span>
+				<span id="przywrocUst" class="menu-opcja" title="Restore default settings">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="glowny"><path d="M255.545 8c-66.269.119-126.438 26.233-170.86 68.685L48.971 40.971C33.851 25.851 8 36.559 8 57.941V192c0 13.255 10.745 24 24 24h134.059c21.382 0 32.09-25.851 16.971-40.971l-41.75-41.75c30.864-28.899 70.801-44.907 113.23-45.273 92.398-.798 170.283 73.977 169.484 169.442C423.236 348.009 349.816 424 256 424c-41.127 0-79.997-14.678-110.63-41.556-4.743-4.161-11.906-3.908-16.368.553L89.34 422.659c-4.872 4.872-4.631 12.815.482 17.433C133.798 479.813 192.074 504 256 504c136.966 0 247.999-111.033 248-247.998C504.001 119.193 392.354 7.755 255.545 8z"></path></svg>Reset<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="prawo"><path d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+				</span>
+				<span id="udostepnij" class="menu-opcja wysuwany">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="glowny"><path d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"></path></svg>
+					Share<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="prawo"><path d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+					<div class="wysun">
+						<div class="kutas">
+							<span class="pejsbuk udostepnij" title="Share on facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></span><span class="pitol udostepnij" title="Share on twitter">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span><span class="lynkedyn udostepnij" title="Share on linkedin">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span>
+						</div>
+					</div>
+				</span>
+				<span id="widzety" class="menu-opcja wysuwany">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="glowny"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"></path></svg>
+					Other<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="prawo"><path d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+					<div class="wysun">
+						<div style="width:200px">Most commented, Recent, Inne Widgety</div>
+					</div>
+				</span>
+			</div>
+			
+			<div class="ustawienia">
+			<div class="nazwa-bloku"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"></path></svg>Settings</div>
+			<div class="generator">
+			
+				<form id="formularz">
+							<div class="opcja">
+								<div class="tytul">Widget's title:</div>
+								<div class="input">
+									<input id="widgetsTitle" type="text" value="Random Posts">
+									<span class="pytajnik" tooltip="What is your widget's name?"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Number of posts:</div>
+								<div class="input">
+									<input id="numberOfPosts" type="number" value="5" min="1" max="99">
+									<span class="pytajnik" tooltip="How many random posts should be loaded?"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Label:</div>
+								<div class="input">
+									<input id="label" type="text" value="">
+									<span class="pytajnik" tooltip="If you want to display random posts only from specific label, enter the name of the selected label here (remember that the label name is case sensitive). Leave this field blank to let the widget randomize posts from all over your blog."></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Display:</div>
+								<div class="input">
+									<select id="display" rozwin="setWidth">
+										<option value="vertical">Vertical</option>
+										<option value="horizontal">Horizontal</option>
+									</select>
+									<span class="pytajnik" tooltip='Display "Vertical" will show posts one above the other, while "Horizontal" will show posts side by side'></span>
+								</div>
+							</div>
+							
+							<div class="zawijka" for="setWidth" style="display:none;">
+								<div class="opcja">
+									<div class="tytul">Container width:</div>
+									<div class="input">
+										<input id="width" type="number" value="180" min="50" max="500"> px
+										<span class="pytajnik" tooltip="How wide should each post container be?"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Container rounding:</div>
+								<div class="input">
+									<input id="rounding" type="number" value="5" min="0" max="50"> %
+									<span class="pytajnik" tooltip="Here you can set the rounding of post containers"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Container background:</div>
+								<div class="input">
+									<input id="background" type="color" value="#ffd780">
+									<span class="pytajnik" tooltip="Choose the background you want for each post"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Border width:</div>
+								<div class="input">
+									<input id="borderWidth" type="number" value="1" min="0" max="10" rozwin="bordery">
+									<span class="pytajnik" tooltip='Set border width for post containers (set to "0" if you do not want border at all)'></span>
+								</div>
+							</div>
+							
+							<div class="zawijka" for="bordery">
+								<div class="opcja">
+									<div class="tytul">Border color:</div>
+									<div class="input">
+										<input id="borderColor" type="color" value="#000000">
+										<span class="pytajnik" tooltip="Choose the color of the border"></span>
+									</div>
+								</div>
+								
+								<div class="opcja">
+									<div class="tytul">Border style:</div>
+									<div class="input">
+										<select id="borderStyle">
+											<option value="solid">Solid</option>
+											<option value="dotted">Dotted</option>
+											<option value="dashed">Dashed</option>
+											<option value="outset">Outset</option>
+											<option value="inset">Inset</option>
+											<option value="double">Double</option>
+											<option value="groove">Groove</option>
+										</select>
+										<span class="pytajnik" tooltip='Choose where to display the thumbnail of the post image, or "none" to not display it at all'></span>
+									</div>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Show thumbnail:</div>
+								<div class="input">
+									<select id="thumbnail" rozwin="showThumbnail">
+										<option value="left">Left</option>
+										<option value="center">Center</option>
+										<option value="right">Right</option>
+										<option value="none">None</option>
+									</select>
+									<span class="pytajnik" tooltip='Choose where to display the thumbnail of the post image, or "none" to not display it at all'></span>
+								</div>
+							</div>
+							
+							<div class="zawijka" for="showThumbnail">
+								<div class="opcja">
+									<div class="tytul">Thumbnail size:</div>
+									<div class="input">
+										<input id="thumbnailSize" type="number" value="70" min="0" max="200"> px
+										<span class="pytajnik" tooltip="Set the image size"></span>
+									</div>
+								</div>
+								
+								<div class="opcja">
+									<div class="tytul">Thumbnail rounding:</div>
+									<div class="input">
+										<input id="thumbnailRounding" type="number" value="10" min="0" max="50"> %
+										<span class="pytajnik" tooltip="Set the roundness of the thumbnail image of the post"></span>
+									</div>
+								</div>
+								
+								<div class="opcja">
+									<div class="tytul">No thumbnail:</div>
+									<div class="input">
+										<input id="noThumbnail" type="text" value="https://3.bp.blogspot.com/-go-1bJQKzCY/XIpRVUCKeCI/AAAAAAAAAQM/YUdYK3hEkcIFwcz0r-T2uErre0JOJWnrwCLcBGAs/s1600/no-image.png">
+										<span class="pytajnik" tooltip="If You want to replace the image which will be displayed when one of your posts would not have it's own thumbnail, enter the url of your image to this field or upload your own image."></span>
+									</div>
+									<div class="dodatkoweOpcjeFoto">
+										<div class="brakObrDiw"><img id="brakObrazka"></div>
+										<label class="wgrajFotOpcja" style="margin-right:12px;" tooltip="If you upload an image which width or height is greater than 60px, it will be automatically reduced to this value. To use a larger image, enter the url for your image in the text field above.">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>
+											<input id="wlasnyObr" type="file" accept="image/*">
+										</label>
+										<span class="wgrajFotOpcja" id="przywrocFoto" tooltip="Restore default photo.">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"></path></svg>
+										</span>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Text font:</div>
+								<div class="input">
+									<select id="textFont">
+										<option value="Georgia, serif" style="font-family:Georgia, serif;">Georgia</option>
+											<option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif" style="font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif">Palatino</option>
+											<option value="'Times New Roman', Times, serif" style="font-family:&quot;Times New Roman&quot;, Times, serif">Times New Roman</option>
+											<option value="Arial, sans-serif" style="font-family:Arial, sans-serif">Arial</option>
+											<option value="'Arial Black', Gadget, sans-serif" style="font-family:&quot;Arial Black&quot;, Gadget, sans-serif">Arial Black</option>
+											<option value="'Comic Sans MS', cursive, sans-serif" style="font-family:&quot;Comic Sans MS&quot;, cursive, sans-serif">Comic Sans</option>
+											<option value="Impact, Charcoal, sans-serif" style="font-family:Impact, Charcoal, sans-serif">Impact</option>
+											<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif" style="font-family:&quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, sans-serif">Lucida Sans</option>
+											<option value="Garamond, serif" style="font-family:Garamond, serif">Garamond</option>
+											<option value="Tahoma, Geneva, sans-serif" style="font-family:Tahoma, Geneva, sans-serif">Tahoma</option>
+											<option value="Helvetica, sans-serif" style="font-family:Helvetica, sans-serif">Helvetica</option>
+											<option value="'Trebuchet MS', Helvetica, sans-serif" style="font-family:&quot;Trebuchet MS&quot;, Helvetica, sans-serif">Trebuchet</option>
+											<option value="'Brush Script MT', cursive" style="font-family:&quot;Brush Script MT&quot;, cursive">Brush Scrip</option>
+											<option value="Verdana, Geneva, sans-serif" style="font-family:Verdana, Geneva, sans-serif">Verdana</option>
+											<option value="'Courier New', Courier, monospace" style="font-family:&quot;Courier New&quot;, Courier, monospace">Courier New</option>
+											<option value="'Lucida Console', Monaco, monospace" style="font-family:&quot;Lucida Console&quot;, Monaco, monospace">Lucida Console</option>
+											<option value="Inherit" style="font-family:Inherit">Inherit</option>
+									</select>
+									<span class="pytajnik" tooltip="Here you can set the font of all texts except the titles"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Text size:</div>
+								<div class="input">
+									<input id="textSize" type="number" value="15" min="8" max="30"> px
+									<span class="pytajnik" tooltip="Set the font size for all texts except titles"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Text color:</div>
+								<div class="input">
+									<input id="textColor" type="color" value="#000000">
+									<span class="pytajnik" tooltip="Choose a color for your posts texts"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Show title:</div>
+								<div class="input">
+									<select id="showTitle" rozwin="showTitle">
+										<option value="left">Left</option>
+										<option value="center">Center</option>
+										<option value="right">Right</option>
+										<option value="none">None</option>
+									</select>
+									<span class="pytajnik" tooltip='Choose where to display the post title, or "none" to not display it at all'></span>
+								</div>
+							</div>
+							
+							<div class="zawijka" for="showTitle">
+								<div class="opcja">
+									<div class="tytul">Title font:</div>
+									<div class="input">
+										<select id="titleFont">
+											<option value="Georgia, serif" style="font-family:Georgia, serif;">Georgia</option>
+											<option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif" style="font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif">Palatino</option>
+											<option value="'Times New Roman', Times, serif" style="font-family:&quot;Times New Roman&quot;, Times, serif">Times New Roman</option>
+											<option value="Arial, sans-serif" style="font-family:Arial, sans-serif">Arial</option>
+											<option value="'Arial Black', Gadget, sans-serif" style="font-family:&quot;Arial Black&quot;, Gadget, sans-serif">Arial Black</option>
+											<option value="'Comic Sans MS', cursive, sans-serif" style="font-family:&quot;Comic Sans MS&quot;, cursive, sans-serif">Comic Sans</option>
+											<option value="Impact, Charcoal, sans-serif" style="font-family:Impact, Charcoal, sans-serif">Impact</option>
+											<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif" style="font-family:&quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, sans-serif">Lucida Sans</option>
+											<option value="Garamond, serif" style="font-family:Garamond, serif">Garamond</option>
+											<option value="Tahoma, Geneva, sans-serif" style="font-family:Tahoma, Geneva, sans-serif">Tahoma</option>
+											<option value="Helvetica, sans-serif" style="font-family:Helvetica, sans-serif">Helvetica</option>
+											<option value="'Trebuchet MS', Helvetica, sans-serif" style="font-family:&quot;Trebuchet MS&quot;, Helvetica, sans-serif">Trebuchet</option>
+											<option value="'Brush Script MT', cursive" style="font-family:&quot;Brush Script MT&quot;, cursive">Brush Scrip</option>
+											<option value="Verdana, Geneva, sans-serif" style="font-family:Verdana, Geneva, sans-serif">Verdana</option>
+											<option value="'Courier New', Courier, monospace" style="font-family:&quot;Courier New&quot;, Courier, monospace">Courier New</option>
+											<option value="'Lucida Console', Monaco, monospace" style="font-family:&quot;Lucida Console&quot;, Monaco, monospace">Lucida Console</option>
+											<option value="Inherit" style="font-family:Inherit">Inherit</option>
+										</select>
+										<span class="pytajnik" tooltip="Choose a font for your post titles"></span>
+									</div>
+								</div>
+							
+								<div class="opcja">
+									<div class="tytul">Title size:</div>
+									<div class="input">
+										<input id="titleSize" type="number" value="17" min="10" max="30"> px
+										<span class="pytajnik" tooltip="Set the font size for the post titles"></span>
+									</div>
+								</div>
+								
+								<div class="opcja">
+									<div class="tytul">Title color:</div>
+									<div class="input">
+										<input id="titleColor" type="color" value="#888888">
+										<span class="pytajnik" tooltip="What color should the post titles be?"></span>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Show info:</div>
+								<div class="input">
+									<select id="showInfo" rozwin="pokazInfo">
+										<option value="left">Left</option>
+										<option value="center">Center</option>
+										<option value="right">Right</option>
+										<option value="none">None</option>
+									</select>
+									<span class="pytajnik" tooltip='Choose where to display the post labels, or "none" to not display it at all'></span>
+								</div>
+							</div>
+							
+							<div class="zawijka" for="pokazInfo">
+								<div class="opcja">
+									<div class="tytul">Information to show:</div>
+									<div class="input">
+										<label><input id="showAuthor" type="checkbox" checked>Author</label>
+										<label><input id="showComments" type="checkbox" checked>Number of comments</label>
+										<label><input id="showDate" type="checkbox" checked>Date of publication</label>
+										<span class="pytajnik" tooltip="Choose which post information to display in the info box"></span>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Show labels:</div>
+								<div class="input">
+									<select id="showLabels" rozwin="pokazTagi">
+										<option value="left">Left</option>
+										<option value="center">Center</option>
+										<option value="right">Right</option>
+										<option value="none">None</option>
+									</select>
+									<span class="pytajnik" tooltip="Choose where to show post information such as author, number of comments, and publication date"></span>
+								</div>
+							</div>
+							
+							<div class="zawijka" for="pokazTagi">
+								<div class="opcja">
+									<div class="tytul">Number of labels:</div>
+									<div class="input">
+										<input id="numberOfLabels" type="number" value="20" min="1" max="20">
+										<span class="pytajnik" tooltip='If any of your random posts has more labels than the number set in this field, the widget will not show all of these labels, only as many as you set here (labels will be selected randomly). A value of "20" will make sure that all post labels are always shown.'></span>
+									</div>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Excerpt length:</div>
+								<div class="input">
+									<input id="excerptLength" type="number" value="200" min="0" max="1000" rozwin="pokazSkrot">
+									<span class="pytajnik" tooltip='Set the length of the post summary (choose "0" to not display the summary at all)'></span>
+								</div>
+							</div>
+							
+							<div class="zawijka" for="pokazSkrot">
+								<div class="opcja">
+									<div class="tytul">Excerpt's alignment:</div>
+									<div class="input">
+										<select id="excerptAlign">
+											<option value="justify">Justify</option>
+											<option value="left">Left</option>
+											<option value="center">Center</option>
+											<option value="right">Right</option>
+										</select>
+										<span class="pytajnik" tooltip="How do I align a post's excerpt?"></span>
+									</div>
+								</div>
+							</div>
+				</form>
+							
+			</div>
+			</div>
+			
+			<div class="podglad">
+				<div class="nazwa-bloku" style="position:relative;">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M380.41991,92.1336,74.29894,241.7427c-8.31835,4.06444-12.27733,13.25583-9.05663,21.02925l8.74413,21.10934L9.881,310.43593a16.00146,16.00146,0,0,0-8.66015,20.90425L21.27748,379.762a16.00055,16.00055,0,0,0,20.90429,8.66014l64.10544-26.55464,8.74219,21.10738c3.21874,7.77343,12.51757,11.47459,21.27147,8.46678l127.0019-43.623c.1875.24219.39258.46875.584.709L216.42,490.93949A16.00034,16.00034,0,0,0,231.5977,512H248.459a15.99985,15.99985,0,0,0,15.17772-10.94139l42.16209-126.49585a71.088,71.088,0,0,0,28.44726,0l42.164,126.49585A15.99986,15.99986,0,0,0,391.58787,512h16.85937a16.00062,16.00062,0,0,0,15.17968-21.06051L376.16014,348.52765a71.2877,71.2877,0,0,0,15.85742-44.52726c0-.13086-.03906-.25-.03906-.38086l66.56637-22.86519ZM320,328.00035a24,24,0,1,1,24-24A24.02622,24.02622,0,0,1,320,328.00035ZM638.77722,216.83064,553.06241,9.88181a15.99768,15.99768,0,0,0-20.90233-8.66014L414.84372,49.81923a15.99966,15.99966,0,0,0-8.65625,20.90426l85.71286,206.94883a16.00055,16.00055,0,0,0,20.90429,8.66014L630.119,237.73489A15.99729,15.99729,0,0,0,638.77722,216.83064Z"></path></svg>Preview:
+					<label class="pierdolnik">
+						<input id="tloPodglad" type="color" value="#ffffff">
+						<span id="oKurwa" tooltip="Here you can change the preview background as it is on your blog to better adapt the widget colors to your blog"></span>
+					</label>
+				</div>
+				<div id="podglad"></div>
+				<div class="blokInf">Example post container</div>
+				<div>
+				
+					<form method="POST" action="https://www.blogger.com/add-widget" target="_blank">
+						<input id="tytulWidzetu" type="hidden" name="widget.title">
+						<input type="hidden" name="infoUrl" value="https://bloggerwidgets.github.io/randomposts.html">
+						<input type="hidden" name="logoUrl" value="https://2.bp.blogspot.com/-bIhJGWLIojM/WkGKJj6ascI/AAAAAAAAABo/GHkiXY9XjmUdDKEDSaIIWJj5vOBXpB-zACLcBGAs/s1600/Random%2Bposts%2Bblogger.png">
+						<textarea id="tekstwidzetu" name="widget.content" style="display:none;"></textarea>
+						<div><button class="bloggerGuzik" title="Install Random Posts Widget on Your Blogger Blog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="lewy"><path d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"></path></svg>Install on Blogger<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="prawy"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg> </button></div>
+					</form>
+
+				</div>
+			</div>
+			
+		</div>
+		
+		<img src="https://4.bp.blogspot.com/-Cltm_-kesuw/XIGZZEV2B6I/AAAAAAAAAKo/YnCMKY574EQlJERoZyaqsE9Naq09tqZOQCLcBGAs/s1600/invalid-image-url.png" style="display:none;">
+		<script src="skrypt.js"></script>
+		<script src="tooltips.js"></script>
+	</body>
+</html>

@@ -10,13 +10,14 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 #menu {float:left;width:100px;height:calc(100vh - 84px);background:black;color:#e0e0e0;border-right:2px solid white;}
 .menu-opcja {position:relative;display:flex;align-items:center;padding:5px 7px;cursor:pointer;border-bottom:1px solid white;background-image:linear-gradient(#1f1f1f, #000000);}
 .menu-opcja:hover {background:#333333;}
-.menu-opcja svg.glowny {height:14px;margin-right:5px;fill:currentColor;}
+.menu-opcja .esfaugl {width:22px;}
+.menu-opcja .esfaugl svg {height:14px;margin-right:5px;fill:currentColor;}
 .wysuwany .wysun {width:0;max-height:0;opacity:0;overflow:hidden;position:absolute;top:-1px;left:calc(100% + 2px);transition:width 1s, max-height 1s, opacity 1s;background:#474747;z-index:2;padding-top:5px;cursor:default;border:1px solid white;border-left:0;}
 .wysuwany.klik .wysun {width:200px;max-height:250px;opacity:1;}
 .wysuwany.klik {background:#474747;}
 .wysuwany.klik:after {content:'';position:absolute;top:0;left:100%;width:2px;height:100%;display:block;background:#474747;}
 .wysuwany .kutas {width:200px;height:200px;padding:10px;}
-.wysuwany .kutas2 {height:250px;padding:5px;}
+.wysuwany .kutas2 {height:250px;padding:4px;}
 .wysuwany .zamknij {position:absolute;top:0;right:0;padding:1px;cursor:pointer;}
 .wysuwany .zamknij:hover {background:red;}
 .wysuwany .zamknij svg {height:12px;width:12px;fill:white;}
@@ -39,9 +40,9 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 #zapiszWidzeta {margin-right:10px;}
 #wgrajZDysku {display:none;}
 .wysNaz {margin-bottom:8px;font-weight:bold;}
-#zapisane {max-height:165px;overflow:auto;margin-bottom:7px;}
-.zapisanyWidget {position:relative;padding:2px 0;border-bottom:1px dotted lightgray;white-space:nowrap;overflow:hidden;}
-.zapisanyWidget:first-child {border-top:1px dotted lightgray;}
+#zapisane {max-height:175px;overflow:auto;margin-bottom:7px;border:1px solid white;}
+.zapisanyWidget {position:relative;padding:2px;white-space:nowrap;overflow:hidden;}
+.zapisanyWidget:not(:last-child) {border-bottom:1px dotted lightgray;}
 .zapisanyWidget nazwa {cursor:pointer;}
 .zapisanyWidget nazwa:hover {text-decoration:underline;}
 .usunZap {position:absolute;top:2px;right:1px;padding:1px;cursor:pointer;}
@@ -50,6 +51,9 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .usunZap:hover svg {height:17px;}
 .usunZap:active {padding:2px;}
 .usunZap:active svg {height:13px;}
+
+.kopiujLink {margin-top:10px;}
+#adres-strony {width:100%;font-size:12px;margin-bottom:7px;}
 
 .guzik {display:inline-flex;align-items:center;padding:2px 3px;border-width:2px;border-style:outset;cursor:pointer;position:relative;background:#8989ff;border-color:#9d9dff;color:black;font-weight:bold;}
 .guzik:hover {background:#b1b1ff;border-color:#c5c5ff;}
@@ -91,12 +95,23 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .dodatkoweOpcjeFoto {display:flex;align-items:center;justify-content:center;margin-top:5px;}
 #brakObrazka {max-width:40px;max-height:40px;}
 .brakObrDiw {display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:10px;}
-.wgrajFotOpcja {cursor:pointer;background:black;padding:2px;border-radius:3px;display:inline-block;}
-.wgrajFotOpcja svg {height:16px;fill:white;}
+.wgrajFotOpcja {cursor:pointer;background:#333333;padding:2px;border-radius:4px;display:inline-block;border:2px outset #3d3d3d;}
+.wgrajFotOpcja svg {height:17px;fill:white;}
 .wgrajFotOpcja input {display:none;}
-.wgrajFotOpcja:hover {background:red;}
-.zawijka[for="pokazInfo"] label {display:block;cursor:pointer;}
-.zawijka[for="pokazInfo"] label input {cursor:pointer;}
+.wgrajFotOpcja:hover {background:#505050;border-color:#5a5a5a;}
+.wgrajFotOpcja:active {padding:3px 1px 1px 3px;border-style:inset;}
+.czekboksy label {display:block;cursor:pointer;padding:1px;}
+.czekboksy label input {cursor:pointer;}
+.czekboksy label:hover {text-decoration:underline;}
+.czekboksy label:active {padding:2px 0 0 2px;}
+.czekboksy label:checked {font-weight:bold;}
+#zaawansowane {text-align:right;padding:2px 5px 2px 2px;margin-bottom:5px;}
+#zaawansowane:not(.klikniete) {cursor:pointer;}
+#zaawansowane:not(.klikniete):hover {text-decoration:underline;}
+#zaawansowane.klikniete {color:gray;}
+#zaawansowane svg {fill:currentColor;margin:0 3px -2px 0;height:15px;}
+.infiut {font-size:14px;margin-top:10px;}
+.infiut svg {height:16px;fill:#c40000;margin:0 3px -3px 0;}
 
 .pytajnik {cursor:help;position:absolute;top:5px;right:8px;}
 .pytajnik:before {content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path></svg>');height:15px;width:15px;display:inline-block;}
@@ -120,16 +135,29 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 
 form {margin-block-end:0;}
 
-.udostepnij {box-sizing:border-box;display:inline-flex;justify-content:center;align-items:center;width:26px;height:26px;border-style:outset;border-width:2px;cursor:pointer;vertical-align:top;border-radius:5px;}
-.udostepnij:not(:last-child) {margin-right:5px;}
-.udostepnij:active {border-style:inset;padding:2px 0 0 2px;}
+.udostepnij {box-sizing:border-box;display:inline-flex;justify-content:center;align-items:center;width:28px;height:28px;border-style:outset;border-width:2px;cursor:pointer;vertical-align:top;border-radius:5px;margin:0 7px 7px 0;}
+.udostepnij:active {border-style:inset;padding:3px 0 0 3px;}
 .udostepnij svg {height:18px;max-width:18px;fill:white;}
 .pejsbuk {background:#3b5998;border-color:#4061a6;}
 .pejsbuk:hover {background:#5174bc;border-color:#5f7fc1;}
 .pitol {background:#1da1f2;border-color:#30a9f3;}
 .pitol:hover {background:#0c81c9;border-color:#0d8ddc;}
+.blogger {background:#f57d00;border-color:#ff870a;}
+.blogger:hover {background:#ff9a31;border-color:#ffa445;}
 .lynkedyn {background:#2867B2;border-color:#2c70c2;}
 .lynkedyn:hover {background:#4184d4;border-color:#518ed8;}
+.interest {background:#c8232c;border-color:#d92630;}
+.interest:hover {background:#dc3740;border-color:#df4850;}
+.redyt {background:#ff5700;border-color:#ff6414;}
+.redyt:hover {background:#ff7128;border-color:#ff7e3c;}
+.goglebokmar {background:#db4437;border-color:#de5448;}
+.goglebokmar:hover {background:#e47369;border-color:#e7837a;}
+.dyg {background:#323232;border-color:#3c3c3c;}
+.dyg:hover {background:#505050;border-color:#5a5a5a;}
+.lacap {background:#25d366;border-color:#31db70;}
+.lacap:hover {background:#1ca14e;border-color:#1fb256;}
+.tumblr {background:#34526f;border-color:#3a5c7c;}
+.tumblr:hover {background:#477097;border-color:#4d7aa4;}
 
 @media screen and (min-width: 580px) {
 	.linia1 {display:block;}
@@ -163,6 +191,16 @@ form {margin-block-end:0;}
 
 @media screen and (max-height: 505px) and (min-height: 350px) {
 	#podglad {height:calc(100vh - 200px);}
+}
+
+@media screen and (max-height: 470px) {
+	.wysuwany .wysun {width:0;max-height:250px;transition:width 1s, opacity 1s;}
+	.wysuwany.klik .wysun {width:200px;}
+	#widzety .wysun {top:-170px;}
+	#udostepnij .wysun {top:-140px;}
+	#wczytaj .wysun {top:-80px;}
+	#zapisz .wysun {top:-50px;}
+	#pokazKod .wysun {top:-20px;}
 }
 
 @media screen and (max-height: 350px) {

@@ -71,6 +71,30 @@ generator.querySelectorAll('[rozwin]').forEach(r => {
 	}
 });
 
+zaawansowane.onclick = function() {
+	if (!this.classList.contains('klikniete')) {
+		this.classList.add('klikniete');
+		function generoz() {
+			setTimeout(function() {
+				if (generator.scrollTop < generator.scrollHeight - generator.offsetHeight) {
+					generator.scrollTop = generator.scrollHeight;
+					generoz();
+				}
+			}, 50);
+		}
+		let zaw = document.getElementById('zaaw-rozw');
+		if (zaw.style.display === 'none') {
+			slideDown(zaw, 1000);
+			generoz();
+		} else {
+			slideUp(zaw, 1000);
+		}
+		setTimeout(function() {
+			zaawansowane.classList.remove('klikniete');
+		}, 1000);
+	}
+}
+
 brakObrazka.src = noThumbnail.value;
 brakObrazka.onerror = function() {
 	this.src = 'https://4.bp.blogspot.com/-Cltm_-kesuw/XIGZZEV2B6I/AAAAAAAAAKo/YnCMKY574EQlJERoZyaqsE9Naq09tqZOQCLcBGAs/s1600/invalid-image-url.png';
@@ -202,12 +226,12 @@ function podgladaj() {
 	podglad.appendChild(elem);
 }
 
-const wartosci = ['widgetsTitle', 'numberOfPosts', 'label', 'display', 'width', 'rounding', 'background', 'borderWidth', 'borderStyle', 'borderColor', 'thumbnail', 'thumbnailSize', 'thumbnailRounding', 'noThumbnail', 'showTitle', 'titleFont', 'titleSize', 'titleColor', 'showInfo', 'showAuthor', 'showComments', 'showDate', 'showLabels', 'numberOfLabels', 'excerptLength', 'excerptAlign', 'textFont', 'textSize', 'textColor'];
+const wartosci = ['widgetsTitle', 'numberOfPosts', 'label', 'display', 'width', 'rounding', 'background', 'borderWidth', 'borderStyle', 'borderColor', 'thumbnail', 'thumbnailSize', 'thumbnailRounding', 'noThumbnail', 'showTitle', 'titleFont', 'titleSize', 'titleColor', 'showInfo', 'showAuthor', 'showComments', 'showDate', 'showLabels', 'numberOfLabels', 'excerptLength', 'excerptAlign', 'textFont', 'textSize', 'textColor', 'hideOnHome', 'hideOnPosts', 'hideOnStatic', 'hideOnLabel', 'hideOnSearch', 'hideOnArchive'];
 
 var domyslne = {};
 
 wartosci.forEach(w => {
-	if (w === 'showAuthor' || w === 'showComments' || w === 'showDate') {
+	if (w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 		domyslne[w] = document.getElementById(w).checked ? true : false;
 	} else {
 		domyslne[w] = document.getElementById(w).value;
@@ -243,7 +267,21 @@ function generujKod() {
 	if (excerptLength.value !== '0') {
 		kod += ' excerptAlign="' + excerptAlign.value + '"';
 	}
-	kod += ' textFont="' + textFont.value + '" textSize="' + textSize.value + '" textColor="' + textColor.value + '" async src="https://cdn.jsdelivr.net/gh/bloggerwidgets/scripts/randomposts.js"><\/script>';
+	kod += ' textFont="' + textFont.value + '" textSize="' + textSize.value + '" textColor="' + textColor.value + '"';
+
+
+	if (hideOnHome.checked || hideOnPosts.checked || hideOnStatic.checked || hideOnLabel.checked || hideOnSearch.checked || hideOnArchive.checked) {
+		let kap = '';
+		if (hideOnHome.checked) kap += 'home,';
+		if (hideOnPosts.checked) kap += 'post,';
+		if (hideOnStatic.checked) kap += 'static,';
+		if (hideOnLabel.checked) kap += 'label,';
+		if (hideOnSearch.checked) kap += 'search,';
+		if (hideOnArchive.checked) kap += 'archive,';
+		kap = kap.substring(0, kap.length-1);
+		kod += ' hide="' + kap + '"'
+	}
+	kod += ' async src="https://cdn.jsdelivr.net/gh/bloggerwidgets/scripts/randomposts.js"><\/script>';
 	return kod;
 }
 
@@ -328,6 +366,17 @@ kodWidzetu.onclick = function() {
 	document.execCommand('copy');
 }
 
+skopiujLinka.onclick = function() {
+	document.getElementById('adres-strony').select();
+	document.execCommand('copy');
+	pokInfo('Copied', this)
+}
+
+document.getElementById('adres-strony').onclick = function() {
+	this.select();
+	document.execCommand('copy');
+}
+
 function wyswietlZapisy() {
 	while (zapisane.firstChild) zapisane.removeChild(zapisane.firstChild);
 	RandomPostsWidgets.sort((a, b) => b.data - a.data);
@@ -383,7 +432,7 @@ zapiszWidzeta.onclick = function() {
 		}
 		
 		wartosci.forEach(w => {
-			if (w === 'showAuthor' || w === 'showComments' || w === 'showDate') {
+			if (w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 				obi[w] = document.getElementById(w).checked ? true : false;
 			} else {
 				obi[w] = document.getElementById(w).value;
@@ -410,7 +459,7 @@ zapiszWidzeta.onclick = function() {
 
 function przywrocWidget(obi) {
 	wartosci.forEach(w => {
-		if (w === 'showAuthor' || w === 'showComments' || w === 'showDate') {
+		if (w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 			document.getElementById(w).checked = (typeof obi[w] == 'boolean') ? obi[w] : domyslne[w];
 		} else {
 			document.getElementById(w).value = (typeof obi[w] == 'string' || typeof obi[w] == 'number') ? obi[w] : domyslne[w];
@@ -424,6 +473,11 @@ function przywrocWidget(obi) {
 			elem.style.display = 'block';
 		}
 	});
+	if (hideOnHome.checked || hideOnPosts.checked || hideOnStatic.checked || hideOnLabel.checked || hideOnSearch.checked || hideOnArchive.checked) {
+		document.getElementById('zaaw-rozw').style.display = 'block';
+	} else {
+		document.getElementById('zaaw-rozw').style.display = 'none';
+	}
 	labelOnInput();
 	podgladaj();
 	jebKodem();
@@ -434,7 +488,7 @@ pobierzWidzeta.onclick = function() {
 	if (!this.classList.contains('nieaktywny')) {
 		let zapis = {}
 		wartosci.forEach(w => {
-			if (w === 'showAuthor' || w === 'showComments' || w === 'showDate') {
+			if (w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 				zapis[w] = document.getElementById(w).checked;
 			} else {
 				zapis[w] = document.getElementById(w).value;
@@ -495,7 +549,7 @@ pobierzKod.onclick = function() {
 przywrocUst.onclick = function() {
 	if (confirm('Are you sure you want to restore the default settings of the widget?')) {
 		for (let k in domyslne) {
-			if (k === 'showAuthor' || k === 'showComments' || k === 'showDate') {
+			if (k === 'showAuthor' || k === 'showComments' || k === 'showDate' || k === 'hideOnHome' || k === 'hideOnPosts' || k === 'hideOnStatic' || k === 'hideOnLabel' || k === 'hideOnSearch' || k === 'hideOnArchive') {
 				document.getElementById(k).checked = domyslne[k];
 			} else {
 				document.getElementById(k).value = domyslne[k];
@@ -506,6 +560,8 @@ przywrocUst.onclick = function() {
 	podgladaj();
 	jebKodem();
 	brakObrazka.src = noThumbnail.value;
+	document.getElementById('zaaw-rozw').style.display = 'none';
+	
 }
 
 wyswietlZapisy();
@@ -523,8 +579,29 @@ const pedaly = [{
 	'nzw' : 'pitol',
 	'link' : 'https://twitter.com/intent/tweet?text=' + tytul +': ' + url
 }, {
+	'nzw' : 'blogger',
+	'link' : 'https://www.blogger.com/blog-this.g?n=' + tytul + '&t=&u=' + url
+}, {
 	'nzw' : 'lynkedyn',
 	'link' : 'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + tytul + '&summary=&source='
+}, {
+	'nzw' : 'interest',
+	'link' : 'https://pinterest.com/pin/create/button/?url=' + url + '&media=&description=' + tytul
+}, {
+	'nzw' : 'redyt',
+	'link' : 'http://www.reddit.com/submit?url=' + url + '&title=' + tytul
+}, {
+	'nzw' : 'goglebokmar',
+	'link' : 'https://www.google.com/bookmarks/mark?op=edit&bkmk=' + url + '&title=' + tytul + '&annotation=' + encodeURIComponent('A cool widget to display random Blogger posts.') + '&labels=' + encodeURIComponent('blogger, widgets, free, random, posts')
+}, {
+	'nzw' : 'dyg',
+	'link' : 'https://digg.com/submit?url=' + url
+}, {
+	'nzw' : 'lacap',
+	'link' : 'https://wa.me/?text=' + url
+}, {
+	'nzw' : 'tumblr',
+	'link' : 'https://www.tumblr.com/share?t=' + tytul + '&u=' + url + '&v=3'
 }];
 	
 pedaly.forEach(p => {

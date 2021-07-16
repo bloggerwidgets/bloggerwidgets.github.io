@@ -7,7 +7,8 @@ header img {float:left;margin-right:5px;height:65px;}
 header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color:#ffffff;text-shadow: 1px 1px 4px #c4c4c4;}
 .opis-strony {color:#e0e0e0;}
 
-#menu {float:left;width:100px;height:calc(100vh - 84px);background:black;color:#e0e0e0;border-right:2px solid white;}
+#pokazMenu, #schowajMenu {display:none;}
+#menu {float:left;width:100px;height:calc(100vh - 84px);background:black;color:#e0e0e0;border-right:2px solid white;z-index:2;}
 .menu-opcja {position:relative;display:flex;align-items:center;padding:5px 7px;cursor:pointer;border-bottom:1px solid white;background-image:linear-gradient(#1f1f1f, #000000);}
 .menu-opcja:hover {background:#333333;}
 .menu-opcja .esfaugl {width:22px;}
@@ -19,8 +20,10 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .wysuwany .kutas {width:200px;height:200px;padding:10px;}
 .wysuwany .kutas2 {height:250px;padding:4px;}
 .wysuwany .zamknij {position:absolute;top:0;right:0;padding:1px;cursor:pointer;}
-.wysuwany .zamknij:hover {background:red;}
+.wysuwany .zamknij:hover {background:#ff4f4f;}
 .wysuwany .zamknij svg {height:12px;width:12px;fill:white;}
+.wysuwany .zamknij:active {padding:2px;background:#ff1414;}
+.wysuwany .zamknij:active svg {height:10px;width:10px;}
 .menu-opcja svg.prawo {height:14px;fill:currentColor;position:absolute;right:5px;transition:transform 1s;}
 .wysuwany.klik svg.prawo {transform:rotate(180deg);}
 #wczytaj.podswietl {transition:background 1s;background:red;}
@@ -33,11 +36,11 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .inpot input:focus {outline:none;border:3px inset gray;padding:1px 3px;}
 #kodWidzetu {width:100%;height:120px;border:2px inset gray;padding:2px 5px;font-size:13px;font-family: 'Ubuntu Mono', monospace;}
 #kodWidzetu:focus {outline:none;}
-#skopiuj {margin-right:10px;}
+#skopiuj {margin-right:7px;}
 .kopInfo {position:absolute;top:calc(100% + 10px);left:0;opacity:0;background:black;color:white;transition:opacity 0.7s;display:inline-flex;padding:3px 5px;border-radius:6px;cursor:default;}
 .kopInfo.poka {opacity:1;}
 .kopInfo svg {height:15px;fill:#89ff89;margin-right:3px;}
-#zapiszWidzeta {margin-right:10px;}
+#zapiszWidzeta {margin-right:7px;}
 #wgrajZDysku {display:none;}
 .wysNaz {margin-bottom:8px;font-weight:bold;}
 #zapisane {max-height:175px;overflow:auto;margin-bottom:7px;border:1px solid white;}
@@ -55,10 +58,10 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .kopiujLink {margin-top:10px;}
 #adres-strony {width:100%;font-size:12px;margin-bottom:7px;}
 
-.guzik {display:inline-flex;align-items:center;padding:2px 3px;border-width:2px;border-style:outset;cursor:pointer;position:relative;background:#8989ff;border-color:#9d9dff;color:black;font-weight:bold;}
-.guzik:hover {background:#b1b1ff;border-color:#c5c5ff;}
-.guzik:active {border-style:inset;padding:3px 2px 1px 4px;}
-.guzik.nieaktywny {background:lightgray;border-color:lightgray;border-style:solid;color:gray;cursor:default;padding:2px 3px;}
+.guzik {display:inline-flex;align-items:center;padding:2px 5px;border-width:2px;border-style:outset;cursor:pointer;position:relative;background:#b1b1b1;border-color:#bbbbbb;color:black;font-weight:bold;}
+.guzik:hover {background:#cfcfcf;border-color:#d9d9d9;}
+.guzik:active {border-style:inset;padding:3px 4px 1px 6px;}
+.guzik.nieaktywny {background:lightgray;border-color:lightgray;border-style:solid;color:gray;cursor:default;padding:2px 5px;}
 .guzik svg {height:16px;margin-right:4px;fill:currentColor;}
 
 .ustawienia {width:220px;float:left;margin:10px;}
@@ -83,16 +86,18 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .generator {background:#9b9b9b;border:1px solid black;height:calc(100vh - 132px);overflow:auto;}
 .generator .opcja {position:relative;padding:5px;border-bottom:1px solid black;}
 .opcja .tytul {font-weight:bold;margin-bottom:5px;}
-.opcja .input {}
-.opcja .input input, .opcja .input select {border:2px inset gray;padding:2px 5px;font-size:15px;font-family: 'Ubuntu Mono', monospace;}
+.opcja .input input, .opcja .input select {border:2px inset gray;padding:2px 5px;font-size:15px;font-family: 'Ubuntu Mono', monospace;background:#ebebeb;}
+.opcja .input input:focus, .opcja .input select:focus {background:white;}
 .opcja .input select {cursor:pointer;}
+.opcja .input input[type="color"] {padding:0;cursor:pointer;width:50px;height:25px;}
 .opcja .input input:focus, .opcja .input select:focus {outline:1px inset gray;}
 .opcja .input input[type="text"] {width:100%;}
+.opcja .input input[type="number"]:out-of-range {background:red;}
 .nazwa-bloku {display:flex;align-items:center;background-image:linear-gradient(#1f1f1f, #000000);color:#e0e0e0;padding:4px 5px;font-size:16px;font-weight:bold;}
 .nazwa-bloku svg {height:14px;fill:currentColor;margin-right:5px;}
 .blokInf {background-image:linear-gradient(#000000, #1f1f1f);padding:1px 5px 3px 5px;color:#e0e0e0;font-size:14px;text-align:center;}
 .zawijka {overflow:hidden;transition:max-height 1s;}
-.dodatkoweOpcjeFoto {display:flex;align-items:center;justify-content:center;margin-top:5px;}
+.dodatkoweOpcjeFoto {display:flex;align-items:center;margin-top:5px;}
 #brakObrazka {max-width:40px;max-height:40px;}
 .brakObrDiw {display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:10px;}
 .wgrajFotOpcja {cursor:pointer;background:#333333;padding:2px;border-radius:4px;display:inline-block;border:2px outset #3d3d3d;}
@@ -108,10 +113,37 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 #zaawansowane {text-align:right;padding:2px 5px 2px 2px;margin-bottom:5px;}
 #zaawansowane:not(.klikniete) {cursor:pointer;}
 #zaawansowane:not(.klikniete):hover {text-decoration:underline;}
+#zaawansowane:not(.klikniete):active {padding:3px 4px 1px 3px;}
 #zaawansowane.klikniete {color:gray;}
 #zaawansowane svg {fill:currentColor;margin:0 3px -2px 0;height:15px;}
 .infiut {font-size:14px;margin-top:10px;}
 .infiut svg {height:16px;fill:#c40000;margin:0 3px -3px 0;}
+#blogURL {width:calc(100% - 25px);border-right:none;}
+#blogURLinfo, #blogURLinfocus {height:23px;overflow:hidden;padding:2px;cursor:help;}
+#blogURLinfo.prawidlo {background:#9dff9d;}
+#blogURLinfo.nieprawidlo {background:#ff9d9d;}
+#sprawdz {display:inline-flex;border:2px inset gray;border-left:none;height:23px;width:23px;align-items:center;justify-content:center;background:#515151;color:#d6d6d6;}
+#sprawdz:not(.nieaktywny) {cursor:pointer;}
+#sprawdz.nieaktywny {background:#6e6e6e;color:#b3b3b3;}
+#blogURL:focus {outline-right:none;}
+#blogURL:focus + #sprawdz {outline:1px inset gray;outline-left:none;}
+#sprawdz:not(.nieaktywny):hover {background:#343434;color:#eaeaea;}
+#sprawdz svg {height:14px;fill:currentColor;margin-top:-2px;}
+#sprawdz:not(.nieaktywny):active svg {height:12px;margin-top:-1px;}
+#blogURLinfo.prawidlo svg {fill:#007600;height:16px;vertical-align:middle;margin:-3px 3px 0 0;}
+#blogURLinfo.nieprawidlo svg {fill:#9d0000;height:16px;vertical-align:middle;margin:-3px 3px 0 0;}
+#blogURLinfo.nieprawidlo svg.errSVG {height:19px;float:right;vertical-align:middle;margin:0 2px;}
+.ladowanie {animation:dawaj 1s linear infinite;width:19px;height:19px;border:3px solid white;border-radius:50%;border-top:3px solid #0000b1;margin:auto;}
+@keyframes dawaj {0% {transform: rotate(0deg);} 100% {transform:rotate(360deg);}}
+
+.tloWybor {display:inline-block;vertical-align:top;padding:3px;}
+.tloWybor input, .tloWybor .przezro {display:block;width:50px;height:25px;}
+.tloWybor.zaznaczony {padding:1px;border:2px solid #eb0000;}
+.tloWybor:not(.zaznaczony):hover {padding:2px;border:1px dotted #eb0000;}
+.tloWybor:not(.zaznaczony) {cursor:pointer;}
+.tloWybor.zaznaczony input[type="color"] {cursor:default;}
+.przezro {background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAuSURBVChTY8zKymJAAlOnToWywIAJSuMANJVm/P//P5QJBtnZ2VAWGAyc0xgYAAGDB07VoVLBAAAAAElFTkSuQmCC');}
+.tloWybor[wartosc="kolor"] {margin-right:4px;}
 
 .pytajnik {cursor:help;position:absolute;top:5px;right:8px;}
 .pytajnik:before {content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path></svg>');height:15px;width:15px;display:inline-block;}
@@ -130,8 +162,9 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .xRandomPost:active{transform:scale(0.99, 0.99)}
 
 .pierdolnik {position:absolute;top:4px;right:5px;}
-#tloPodglad {width:0;height:0;visibility:hidden;}
+#kp {width:0;height:0;visibility:hidden;}
 #oKurwa {display:inline-block;width:20px;height:20px;border-radius:50%;border:1px solid red;background:#ffffff;cursor:pointer;}
+#zaslona {display:none;}
 
 form {margin-block-end:0;}
 
@@ -146,8 +179,8 @@ form {margin-block-end:0;}
 .blogger:hover {background:#ff9a31;border-color:#ffa445;}
 .lynkedyn {background:#2867B2;border-color:#2c70c2;}
 .lynkedyn:hover {background:#4184d4;border-color:#518ed8;}
-.interest {background:#c8232c;border-color:#d92630;}
-.interest:hover {background:#dc3740;border-color:#df4850;}
+.interes {background:#c8232c;border-color:#d92630;}
+.interes:hover {background:#dc3740;border-color:#df4850;}
 .redyt {background:#ff5700;border-color:#ff6414;}
 .redyt:hover {background:#ff7128;border-color:#ff7e3c;}
 .goglebokmar {background:#db4437;border-color:#de5448;}
@@ -159,27 +192,61 @@ form {margin-block-end:0;}
 .tumblr {background:#34526f;border-color:#3a5c7c;}
 .tumblr:hover {background:#477097;border-color:#4d7aa4;}
 
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 595px) {
 	.linia1 {display:block;}
 }
 
-@media screen and (max-width: 620px) {
-	.strona {text-align:center;}
+@media screen and (max-width: 630px) {
 	.ustawienia {float:none;display:inline-block;text-align:left;}
-	#menu {display:none;}
+	#menu {display:none;overflow:hidden;position:fixed;z-index:4;top:0;left:0;height:100%;width:0;transition:width 0.7s;}
+	#zaslona {position:fixed;top:0;left:0;width:100%;height:100%;background:#00000095;z-index:3}
+	#menu.pokaz, #zaslona.pokaz {display:block;}
+	#menu.pokaz.width100 {width:100px;}
+	#menu.pokaz.owerflo {overflow:visible;}
+	#pokazMenu {display:inline-block;float:left;background:#333333;border:2px outset #3d3d3d;color:#e0e0e0;margin:3px 0 0 3px;padding:3px 4px;cursor:pointer;}
+	#pokazMenu svg {height:18px;fill:currentColor;}
+	#pokazMenu:hover {background:#505050;border-color:#5a5a5a;}
+	#pokazMenu:active {border-style:inset;padding:4px 3px 2px 5px;}
+	#schowajMenu {display:flex;padding:3px 5px;font-size:12px;align-items:center;}
+	#schowajMenu svg.iks {height:24px;width:24px;fill:currentColor;margin-left:auto;}
+	#schowajMenu svg.strzalka {height:12px;fill:currentColor;margin-right:3px;}
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 565px) {
+	.strona {text-align:center;}
 	.ustawienia {width:300px;font-size:17px;}
 	.opcja .input input, .opcja .input select {padding:3px 7px;font-size:17px;}
 	.podglad {width:300px;}
 	.generator {height:auto;}
+	.strona {position:relative;}
+	#pokazMenu {float:none;position:absolute;left:3px;top:3px;}
+}
+
+@media screen and (max-width: 390px) {
+	#pokazMenu {position:static;display:block;margin:0;}
+}
+
+@media screen and (max-width: 317px) {
+	#pokazMenu {display:none;}
+}
+
+@media screen and (max-height: 350px) and (min-width: 566px) {
+	.generator {height:370px;}
+}
+
+@media screen and (max-height: 505px) and (min-height: 351px) and (min-width: 566px) {
+	#podglad {height:calc(100vh - 200px);}
+}
+
+@media screen and (max-height: 350px) and (min-width: 631px) {
+	#menu {height:100vh;position:sticky;top:0;}
 }
 
 @media screen and (max-width: 340px) {
-	.ustawienia {width:calc(100% - 20px);font-size:15px;}
+	.ustawienia {width:calc(100% - 20px);font-size:15px;min-width:190px;}
 	.opcja .input input, .opcja .input select {padding:2px 5px;font-size:15px;}
-	.podglad {width:calc(100% - 20px)}
+	.podglad {width:calc(100% - 20px);min-width:190px;}
+	header, .strona {min-width:210px;}
 }
 
 @media screen and (max-width: 286px) {
@@ -187,10 +254,6 @@ form {margin-block-end:0;}
 	.bloggerGuzik svg {height:15px;}
 	.bloggerGuzik svg.lewy {margin-right:4px;}
 	.bloggerGuzik svg.prawy {margin-left:4px;}
-}
-
-@media screen and (max-height: 505px) and (min-height: 350px) {
-	#podglad {height:calc(100vh - 200px);}
 }
 
 @media screen and (max-height: 470px) {
@@ -201,9 +264,4 @@ form {margin-block-end:0;}
 	#wczytaj .wysun {top:-80px;}
 	#zapisz .wysun {top:-50px;}
 	#pokazKod .wysun {top:-20px;}
-}
-
-@media screen and (max-height: 350px) {
-	.generator {height:370px;}
-	#menu {height:100vh;position:sticky;top:0;z-index:2;}
 }

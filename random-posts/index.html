@@ -29,6 +29,13 @@
 		<div class="strona">
 		
 			<div id="menu">
+				
+				<span id="schowajMenu" class="menu-opcja" title="Exit the Menu">
+					<svg class="strzalka" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M193.456 357.573L127.882 292H424c13.255 0 24-10.745 24-24v-24c0-13.255-10.745-24-24-24H127.882l65.574-65.573c9.373-9.373 9.373-24.569 0-33.941l-16.971-16.971c-9.373-9.373-24.569-9.373-33.941 0L7.029 239.029c-9.373 9.373-9.373 24.568 0 33.941l135.515 135.515c9.373 9.373 24.569 9.373 33.941 0l16.971-16.971c9.373-9.372 9.373-24.568 0-33.941z"></path></svg>
+					<span class="schTxt">Close</span>
+					<svg  class="iks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"></path></svg>
+				</span>
+				
 				<span id="zainstaluj" class="menu-opcja" title="Install Random Posts Widget on Your Blogger Blog">
 					<span class="esfaugl">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="glowny"><path d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"></path></svg>
@@ -72,7 +79,7 @@
 							<div class="wysNaz" style="padding-left:5px;">Your saved widgets:</div>
 							<div id="zapisane"></div>
 							<label>
-								<input id="wgrajZDysku" type="file" accept=".json">
+								<input id="wgrajZDysku" type="file" accept=".json,.txt">
 								<span class="guzik"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>Upload from disk</span>
 							</label>
 						</div>
@@ -93,7 +100,7 @@
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span><span class="blogger udostepnij" title="Share on Blogger">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"></path></svg>
 							</span><span class="lynkedyn udostepnij" title="Share on linkedin">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span><span class="interest udostepnij" title="Share on pinterest">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span><span class="interes udostepnij" title="Share on pinterest">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"></path></svg></span><span class="redyt udostepnij" title="Share on reddit">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M440.3 203.5c-15 0-28.2 6.2-37.9 15.9-35.7-24.7-83.8-40.6-137.1-42.3L293 52.3l88.2 19.8c0 21.6 17.6 39.2 39.2 39.2 22 0 39.7-18.1 39.7-39.7s-17.6-39.7-39.7-39.7c-15.4 0-28.7 9.3-35.3 22l-97.4-21.6c-4.9-1.3-9.7 2.2-11 7.1L246.3 177c-52.9 2.2-100.5 18.1-136.3 42.8-9.7-10.1-23.4-16.3-38.4-16.3-55.6 0-73.8 74.6-22.9 100.1-1.8 7.9-2.6 16.3-2.6 24.7 0 83.8 94.4 151.7 210.3 151.7 116.4 0 210.8-67.9 210.8-151.7 0-8.4-.9-17.2-3.1-25.1 49.9-25.6 31.5-99.7-23.8-99.7zM129.4 308.9c0-22 17.6-39.7 39.7-39.7 21.6 0 39.2 17.6 39.2 39.7 0 21.6-17.6 39.2-39.2 39.2-22 .1-39.7-17.6-39.7-39.2zm214.3 93.5c-36.4 36.4-139.1 36.4-175.5 0-4-3.5-4-9.7 0-13.7 3.5-3.5 9.7-3.5 13.2 0 27.8 28.5 120 29 149 0 3.5-3.5 9.7-3.5 13.2 0 4.1 4 4.1 10.2.1 13.7zm-.8-54.2c-21.6 0-39.2-17.6-39.2-39.2 0-22 17.6-39.7 39.2-39.7 22 0 39.7 17.6 39.7 39.7-.1 21.5-17.7 39.2-39.7 39.2z"></path></svg>
 							</span><span class="goglebokmar udostepnij" title="Share on Google Bookmarks">
@@ -132,6 +139,8 @@
 				</span>
 			</div>
 			
+			<span id="pokazMenu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></span>
+			
 			<div class="ustawienia">
 			<div class="nazwa-bloku"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"></path></svg>Settings</div>
 			<div class="generator">
@@ -148,7 +157,7 @@
 							<div class="opcja">
 								<div class="tytul">Number of posts:</div>
 								<div class="input">
-									<input id="numberOfPosts" type="number" value="5" min="1" max="99">
+									<input id="numberOfPosts" type="number" value="5" min="1" max="999">
 									<span class="pytajnik" tooltip="How many random posts should be loaded?"></span>
 								</div>
 							</div>
@@ -156,7 +165,7 @@
 							<div class="opcja">
 								<div class="tytul">Label:</div>
 								<div class="input">
-									<input id="label" type="text" value="">
+									<input id="label" type="text" value="" placeholder="none">
 									<span class="pytajnik" tooltip="If you want to display random posts only from specific label, enter the name of the selected label here (remember that the label name is case sensitive). Leave this field blank to let the widget randomize posts from all over your blog."></span>
 								</div>
 							</div>
@@ -172,37 +181,53 @@
 								</div>
 							</div>
 							
-							<div class="zawijka" for="setWidth" style="display:none;">
+							<div class="zawijka" for="setWidth" start="schowaj">
 								<div class="opcja">
-									<div class="tytul">Container width:</div>
+									<div class="tytul">Box width:</div>
 									<div class="input">
-										<input id="width" type="number" value="180" min="50" max="500"> px
+										<input id="width" type="number" value="180" min="50" max="1000"> px
 										<span class="pytajnik" tooltip="How wide should each post container be?"></span>
 									</div>
 								</div>
 							</div>
 							
 							<div class="opcja">
-								<div class="tytul">Container rounding:</div>
+								<div class="tytul">Box background:</div>
 								<div class="input">
-									<input id="rounding" type="number" value="5" min="0" max="50"> %
+									
+									<label class="tloWybor zaznaczony" wartosc="kolor" tooltip="Choose any color">
+										<input id="background" type="color" value="#ffd780">
+									</label>
+									
+									<span class="tloWybor" wartosc="transparent" tooltip="Transparent">
+										<span class="przezro"></span>
+									</span>
+									
+									<span class="pytajnik" tooltip="Choose the background you want for each post"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Box rounding:</div>
+								<div class="input">
+									<input id="rounding" type="number" value="5" min="0" max="100"> %
 									<span class="pytajnik" tooltip="Here you can set the rounding of post containers"></span>
 								</div>
 							</div>
 							
 							<div class="opcja">
-								<div class="tytul">Container background:</div>
+								<div class="tytul">Box padding:</div>
 								<div class="input">
-									<input id="background" type="color" value="#ffd780">
-									<span class="pytajnik" tooltip="Choose the background you want for each post"></span>
+									<input id="padding" type="number" value="5" min="0" max="50"> px
+									<span class="pytajnik" tooltip="Set what padding you want each random post to have"></span>
 								</div>
 							</div>
 							
 							<div class="opcja">
 								<div class="tytul">Border width:</div>
 								<div class="input">
-									<input id="borderWidth" type="number" value="1" min="0" max="10" rozwin="bordery">
-									<span class="pytajnik" tooltip='Set border width for post containers (set to "0" if you do not want border at all)'></span>
+									<input id="borderWidth" type="number" value="1" min="0" max="20" rozwin="bordery">
+									<span class="pytajnik" tooltip='Set border width for post boxes (set to "0" if you do not want border at all)'></span>
 								</div>
 							</div>
 							
@@ -265,7 +290,7 @@
 								<div class="opcja">
 									<div class="tytul">No thumbnail:</div>
 									<div class="input">
-										<input id="noThumbnail" type="text" value="https://3.bp.blogspot.com/-go-1bJQKzCY/XIpRVUCKeCI/AAAAAAAAAQM/YUdYK3hEkcIFwcz0r-T2uErre0JOJWnrwCLcBGAs/s1600/no-image.png">
+										<input id="noThumbnail" type="text" value="https://1.bp.blogspot.com/-agSKfOT_mcg/YOdAzPGnEjI/AAAAAAAAAdg/sXjDeQtO9UUc4_tOgPANgH2dTry4BJYIACLcBGAsYHQ/s0/no-image.jpg">
 										<span class="pytajnik" tooltip="If You want to replace the image which will be displayed when one of your posts would not have it's own thumbnail, enter the url of your image to this field or upload your own image."></span>
 									</div>
 									<div class="dodatkoweOpcjeFoto">
@@ -311,7 +336,7 @@
 							<div class="opcja">
 								<div class="tytul">Text size:</div>
 								<div class="input">
-									<input id="textSize" type="number" value="15" min="8" max="30"> px
+									<input id="textSize" type="number" value="15" min="7" max="40"> px
 									<span class="pytajnik" tooltip="Set the font size for all texts except titles"></span>
 								</div>
 							</div>
@@ -367,7 +392,7 @@
 								<div class="opcja">
 									<div class="tytul">Title size:</div>
 									<div class="input">
-										<input id="titleSize" type="number" value="17" min="10" max="30"> px
+										<input id="titleSize" type="number" value="17" min="7" max="40"> px
 										<span class="pytajnik" tooltip="Set the font size for the post titles"></span>
 									</div>
 								</div>
@@ -434,7 +459,7 @@
 							<div class="opcja">
 								<div class="tytul">Excerpt length:</div>
 								<div class="input">
-									<input id="excerptLength" type="number" value="200" min="0" max="1000" rozwin="pokazSkrot">
+									<input id="excerptLength" type="number" value="160" min="0" max="1000" rozwin="pokazSkrot">
 									<span class="pytajnik" tooltip='Set the length of the post summary (choose "0" to not display the summary at all)'></span>
 								</div>
 							</div>
@@ -456,7 +481,20 @@
 							
 							<div id="zaawansowane"><svg viewBox="0 0 512 512"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"></path></svg>Advanced settings</div>
 							
-							<div id="zaaw-rozw" style="display:none;">
+							<div id="zaaw-rozw" class="zawijka" start="schowaj">
+							
+								<div class="opcja">
+									<div class="tytul">Blog URL:</div>
+									<div class="input">
+										<div style="display:flex;align-items:center;">
+										<input id="blogURL" type="url" placeholder="auto"><span id="sprawdz" tooltip="" class="nieaktywny"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>
+										<span class="pytajnik" tooltip="Enter the URL of the Home Page of the blog you want to display posts from (not any subpages). You must fill this field if you want to show random posts from a different blog than the one on which the widget is installed, otherwise this field is not required and the widget will automatically show random posts from the current blog."></span>
+										</div>
+										<div id="blogURLinfocus" tooltip="Enter the URL to your Blog's Home Page" style="display:none;">URL to Blog's Home Page</div>
+										<div id="blogURLinfo" tooltip="Enter the URL to your Blog's Home Page">URL to Blog's Home Page</div>
+									</div>
+								</div>
+							
 								<div class="opcja">
 									<div class="tytul">Hide widget on:</div>
 									<div class="input czekboksy">
@@ -480,7 +518,7 @@
 				<div class="nazwa-bloku" style="position:relative;">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M380.41991,92.1336,74.29894,241.7427c-8.31835,4.06444-12.27733,13.25583-9.05663,21.02925l8.74413,21.10934L9.881,310.43593a16.00146,16.00146,0,0,0-8.66015,20.90425L21.27748,379.762a16.00055,16.00055,0,0,0,20.90429,8.66014l64.10544-26.55464,8.74219,21.10738c3.21874,7.77343,12.51757,11.47459,21.27147,8.46678l127.0019-43.623c.1875.24219.39258.46875.584.709L216.42,490.93949A16.00034,16.00034,0,0,0,231.5977,512H248.459a15.99985,15.99985,0,0,0,15.17772-10.94139l42.16209-126.49585a71.088,71.088,0,0,0,28.44726,0l42.164,126.49585A15.99986,15.99986,0,0,0,391.58787,512h16.85937a16.00062,16.00062,0,0,0,15.17968-21.06051L376.16014,348.52765a71.2877,71.2877,0,0,0,15.85742-44.52726c0-.13086-.03906-.25-.03906-.38086l66.56637-22.86519ZM320,328.00035a24,24,0,1,1,24-24A24.02622,24.02622,0,0,1,320,328.00035ZM638.77722,216.83064,553.06241,9.88181a15.99768,15.99768,0,0,0-20.90233-8.66014L414.84372,49.81923a15.99966,15.99966,0,0,0-8.65625,20.90426l85.71286,206.94883a16.00055,16.00055,0,0,0,20.90429,8.66014L630.119,237.73489A15.99729,15.99729,0,0,0,638.77722,216.83064Z"></path></svg>Preview:
 					<label class="pierdolnik">
-						<input id="tloPodglad" type="color" value="#ffffff">
+						<input id="kp" type="color" value="#ffffff">
 						<span id="oKurwa" tooltip="Here you can change the preview background as it is on your blog to better adapt the widget colors to your blog"></span>
 					</label>
 				</div>
@@ -490,10 +528,10 @@
 				
 					<form method="POST" action="https://www.blogger.com/add-widget" target="_blank">
 						<input id="tytulWidzetu" type="hidden" name="widget.title">
-						<input type="hidden" name="infoUrl" value="https://bloggerwidgets.github.io/randomposts.html">
-						<input type="hidden" name="logoUrl" value="https://2.bp.blogspot.com/-bIhJGWLIojM/WkGKJj6ascI/AAAAAAAAABo/GHkiXY9XjmUdDKEDSaIIWJj5vOBXpB-zACLcBGAs/s1600/Random%2Bposts%2Bblogger.png">
+						<input type="hidden" name="infoUrl" value="https://bloggerwidgets.github.io/random-posts">
+						<input type="hidden" name="logoUrl" value="https://bloggerwidgets.github.io/random-posts/random-posts-blogger-widget-logo.png">
 						<textarea id="tekstwidzetu" name="widget.content" style="display:none;"></textarea>
-						<div><button class="bloggerGuzik" title="Install Random Posts Widget on Your Blogger Blog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="lewy"><path d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"></path></svg>Install on Blogger<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="prawy"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg> </button></div>
+						<div><button class="bloggerGuzik" title="Install Random Posts Widget on Your Blogger Blog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="lewy"><path d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"></path></svg>Install on Blogger<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="prawy"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg></button></div>
 					</form>
 
 				</div>
@@ -501,7 +539,8 @@
 			
 		</div>
 		
-		<img src="https://4.bp.blogspot.com/-Cltm_-kesuw/XIGZZEV2B6I/AAAAAAAAAKo/YnCMKY574EQlJERoZyaqsE9Naq09tqZOQCLcBGAs/s1600/invalid-image-url.png" style="display:none;">
+		<div id="zaslona"></div>
+		<img src="invalid-image-url.png" style="display:none;">
 		<script src="skrypt.js"></script>
 		<script src="tooltips.js"></script>
 	</body>

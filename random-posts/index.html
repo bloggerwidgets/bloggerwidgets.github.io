@@ -14,7 +14,7 @@
 		<link href="styl.css" rel="stylesheet">
 		
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Brygada+1918&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Brygada+1918&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
 	</head>
 	<body>
@@ -157,7 +157,7 @@
 							<div class="opcja">
 								<div class="tytul">Number of posts:</div>
 								<div class="input">
-									<input id="numberOfPosts" type="number" value="5" min="1" max="999">
+									<input id="numberOfPosts" type="range" value="5" min="1" max="100" step="1" jedn="" class="numeromat">
 									<span class="pytajnik" tooltip="How many random posts should be loaded?"></span>
 								</div>
 							</div>
@@ -210,7 +210,7 @@
 							<div class="opcja">
 								<div class="tytul">Box rounding:</div>
 								<div class="input">
-									<input id="rounding" type="number" value="5" min="0" max="100"> %
+									<input id="rounding" type="range" value="5" min="0" max="100" step="1" jedn="%" class="numeromat">
 									<span class="pytajnik" tooltip="Here you can set the rounding of post containers"></span>
 								</div>
 							</div>
@@ -218,15 +218,23 @@
 							<div class="opcja">
 								<div class="tytul">Box padding:</div>
 								<div class="input">
-									<input id="padding" type="number" value="5" min="0" max="50"> px
+									<input id="padding" type="range" value="5" min="0" max="50" step="1" jedn="px" class="numeromat">
 									<span class="pytajnik" tooltip="Set what padding you want each random post to have"></span>
+								</div>
+							</div>
+							
+							<div class="opcja">
+								<div class="tytul">Line height:</div>
+								<div class="input">
+									<input id="lineHeight" type="range" value="1.2" min="0.8" max="2" step="0.1" jedn="" class="numeromat">
+									<span class="pytajnik" tooltip="Spacing between text lines"></span>
 								</div>
 							</div>
 							
 							<div class="opcja">
 								<div class="tytul">Border width:</div>
 								<div class="input">
-									<input id="borderWidth" type="number" value="1" min="0" max="20" rozwin="bordery">
+									<input id="borderWidth" type="range" value="1" min="0" max="20" step="1" rozwin="bordery" jedn="px" class="numeromat">
 									<span class="pytajnik" tooltip='Set border width for post boxes (set to "0" if you do not want border at all)'></span>
 								</div>
 							</div>
@@ -274,7 +282,7 @@
 								<div class="opcja">
 									<div class="tytul">Thumbnail size:</div>
 									<div class="input">
-										<input id="thumbnailSize" type="number" value="70" min="0" max="200"> px
+										<input id="thumbnailSize" type="range" value="72" min="0" max="300" step="1" jedn="px" class="numeromat">
 										<span class="pytajnik" tooltip="Set the image size"></span>
 									</div>
 								</div>
@@ -282,7 +290,7 @@
 								<div class="opcja">
 									<div class="tytul">Thumbnail rounding:</div>
 									<div class="input">
-										<input id="thumbnailRounding" type="number" value="10" min="0" max="50"> %
+										<input id="thumbnailRounding" type="range" value="10" min="0" max="50" step="1" jedn="%" class="numeromat">
 										<span class="pytajnik" tooltip="Set the roundness of the thumbnail image of the post"></span>
 									</div>
 								</div>
@@ -290,11 +298,14 @@
 								<div class="opcja">
 									<div class="tytul">No thumbnail:</div>
 									<div class="input">
-										<input id="noThumbnail" type="text" value="https://1.bp.blogspot.com/-agSKfOT_mcg/YOdAzPGnEjI/AAAAAAAAAdg/sXjDeQtO9UUc4_tOgPANgH2dTry4BJYIACLcBGAsYHQ/s0/no-image.jpg">
+									
+										<div style="display:flex;align-items:center;">
+											<input id="noThumbnail" type="text" placeholder="Enter Image URL..." value="https://1.bp.blogspot.com/-agSKfOT_mcg/YOdAzPGnEjI/AAAAAAAAAdg/sXjDeQtO9UUc4_tOgPANgH2dTry4BJYIACLcBGAsYHQ/s0/no-image.jpg" class="linownia"><span id="sprawdzObraz" tooltip="" class="urlTest nieaktywny"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>
+										</div>
 										<span class="pytajnik" tooltip="If You want to replace the image which will be displayed when one of your posts would not have it's own thumbnail, enter the url of your image to this field or upload your own image."></span>
 									</div>
 									<div class="dodatkoweOpcjeFoto">
-										<div class="brakObrDiw"><img id="brakObrazka"></div>
+										<div class="brakObrDiw"><img id="brakObrazka"><div id="fotInf" style="display:none;"></div></div> 
 										<label class="wgrajFotOpcja" style="margin-right:12px;" tooltip="If you upload an image which width or height is greater than 60px, it will be automatically reduced to this value. To use a larger image, enter the url for your image in the text field above.">
 											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>
 											<input id="wlasnyObr" type="file" accept="image/*">
@@ -302,6 +313,7 @@
 										<span class="wgrajFotOpcja" id="przywrocFoto" tooltip="Restore default photo.">
 											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"></path></svg>
 										</span>
+										<div id="prawidlSVG"></div>
 									</div>
 								</div>
 								
@@ -336,7 +348,7 @@
 							<div class="opcja">
 								<div class="tytul">Text size:</div>
 								<div class="input">
-									<input id="textSize" type="number" value="15" min="7" max="40"> px
+									<input id="textSize" type="range" value="15" min="6" max="40" step="1" jedn="px" class="numeromat">
 									<span class="pytajnik" tooltip="Set the font size for all texts except titles"></span>
 								</div>
 							</div>
@@ -392,7 +404,7 @@
 								<div class="opcja">
 									<div class="tytul">Title size:</div>
 									<div class="input">
-										<input id="titleSize" type="number" value="17" min="7" max="40"> px
+										<input id="titleSize" type="range" value="17" min="7" max="50" step="1" jedn="px" class="numeromat">
 										<span class="pytajnik" tooltip="Set the font size for the post titles"></span>
 									</div>
 								</div>
@@ -459,7 +471,7 @@
 							<div class="opcja">
 								<div class="tytul">Excerpt length:</div>
 								<div class="input">
-									<input id="excerptLength" type="number" value="160" min="0" max="1000" rozwin="pokazSkrot">
+									<input id="excerptLength" type="range" value="160" min="0" max="1000" step="1" rozwin="pokazSkrot" jedn="ch" class="numeromat">
 									<span class="pytajnik" tooltip='Set the length of the post summary (choose "0" to not display the summary at all)'></span>
 								</div>
 							</div>
@@ -479,7 +491,7 @@
 								</div>
 							</div>
 							
-							<div id="zaawansowane"><svg viewBox="0 0 512 512"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"></path></svg>Advanced settings</div>
+							<div id="zaawansowane"><svg viewBox="0 0 512 512"><path d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z"></path></svg>Advanced settings</div>
 							
 							<div id="zaaw-rozw" class="zawijka" start="schowaj">
 							
@@ -487,7 +499,7 @@
 									<div class="tytul">Blog URL:</div>
 									<div class="input">
 										<div style="display:flex;align-items:center;">
-										<input id="blogURL" type="url" placeholder="auto"><span id="sprawdz" tooltip="" class="nieaktywny"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>
+										<input id="blogURL" type="url" placeholder="auto" class="linownia"><span id="sprawdz" tooltip="" class="urlTest nieaktywny"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>
 										<span class="pytajnik" tooltip="Enter the URL of the Home Page of the blog you want to display posts from (not any subpages). You must fill this field if you want to show random posts from a different blog than the one on which the widget is installed, otherwise this field is not required and the widget will automatically show random posts from the current blog."></span>
 										</div>
 										<div id="blogURLinfocus" tooltip="Enter the URL to your Blog's Home Page" style="display:none;">URL to Blog's Home Page</div>
@@ -516,7 +528,7 @@
 			
 			<div class="podglad">
 				<div class="nazwa-bloku" style="position:relative;">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M380.41991,92.1336,74.29894,241.7427c-8.31835,4.06444-12.27733,13.25583-9.05663,21.02925l8.74413,21.10934L9.881,310.43593a16.00146,16.00146,0,0,0-8.66015,20.90425L21.27748,379.762a16.00055,16.00055,0,0,0,20.90429,8.66014l64.10544-26.55464,8.74219,21.10738c3.21874,7.77343,12.51757,11.47459,21.27147,8.46678l127.0019-43.623c.1875.24219.39258.46875.584.709L216.42,490.93949A16.00034,16.00034,0,0,0,231.5977,512H248.459a15.99985,15.99985,0,0,0,15.17772-10.94139l42.16209-126.49585a71.088,71.088,0,0,0,28.44726,0l42.164,126.49585A15.99986,15.99986,0,0,0,391.58787,512h16.85937a16.00062,16.00062,0,0,0,15.17968-21.06051L376.16014,348.52765a71.2877,71.2877,0,0,0,15.85742-44.52726c0-.13086-.03906-.25-.03906-.38086l66.56637-22.86519ZM320,328.00035a24,24,0,1,1,24-24A24.02622,24.02622,0,0,1,320,328.00035ZM638.77722,216.83064,553.06241,9.88181a15.99768,15.99768,0,0,0-20.90233-8.66014L414.84372,49.81923a15.99966,15.99966,0,0,0-8.65625,20.90426l85.71286,206.94883a16.00055,16.00055,0,0,0,20.90429,8.66014L630.119,237.73489A15.99729,15.99729,0,0,0,638.77722,216.83064Z"></path></svg>Preview:
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="height:16px;"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg>Preview:
 					<label class="pierdolnik">
 						<input id="kp" type="color" value="#ffffff">
 						<span id="oKurwa" tooltip="Here you can change the preview background as it is on your blog to better adapt the widget colors to your blog"></span>

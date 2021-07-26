@@ -392,15 +392,19 @@ function generujKod() {
 	return kod;
 }
 
+widgetsTitle.oninput = function() {
+	tytulWidzetu.value = this.value;
+}
+
 function jebKodem() {
 	let kod = generujKod();
 	kodWidzetu.value = kod;
 	tekstwidzetu.value = kod;
-	tytulWidzetu.value = widgetsTitle.value;
 }
 
 podgladaj();
 jebKodem();
+tytulWidzetu.value = widgetsTitle.value;
 
 function labelOnInput() {
 	if (label.value && post.tagi.indexOf(label.value) < 0) {

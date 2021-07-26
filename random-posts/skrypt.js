@@ -299,7 +299,7 @@ function podgladaj() {
 	let html = '';
 			
 	if (thumbnail.value !== 'none') html += '<div style="' + obStyl + '"><img src="' + post.obrazek + '" style="width:' + (thumbnailSize.value - Math.round(thumbnailSize.value / 7)) + 'px;"></div>';
-	if (showTitle.value !== 'none') html += '<div style="text-align:' + showTitle.value + ';font-size:' + titleSize.value + 'px;font-weight:bold;color:' + titleColor.value + ';font-family:' + titleFont.value + ';' + ((showInfo.value !== 'none' && (showAuthor.checked || showDate.checked || showComments.checked)) || (showLabels.value !== 'none' && post.tagi.length) || excerptLength.value > 0 ? 'margin-bottom:' + Math.round(titleSize.value / 5) + 'px;' : '') + '">' + post.tytul + '</div>';
+	if (showTitle.value !== 'none') html += '<div style="text-align:' + showTitle.value + ';font-size:' + titleSize.value + 'px;' + (boldTitle.checked ? 'font-weight:bold;' : '') + 'color:' + titleColor.value + ';font-family:' + titleFont.value + ';' + ((showInfo.value !== 'none' && (showAuthor.checked || showDate.checked || showComments.checked)) || (showLabels.value !== 'none' && post.tagi.length) || excerptLength.value > 0 ? 'margin-bottom:' + Math.round(titleSize.value / 5) + 'px;' : '') + '">' + post.tytul + '</div>';
 	if (showInfo.value !== 'none' && (showAuthor.checked || showDate.checked || showComments.checked)) {
 		html += '<div style="text-align:' + showInfo.value + ';' + ((showLabels.value !== 'none' && post.tagi.length) || excerptLength.value > 0 ? 'margin-bottom:' + margines + 'px;' : '') + '">';
 				
@@ -316,7 +316,7 @@ function podgladaj() {
 		html += '<div style="text-align:' + showLabels.value + ';' + (excerptLength.value > 0 ? 'margin-bottom:' + margines + 'px;': '') + '">';
 			
 		for (let i=0; i<post.tagi.length && i<numberOfLabels.value; i++) {
-			html += '<span style="display:inline-flex;align-items:center;background:' + textColor.value + ';color:' + (kolorTla() === 'transparent' ? kp.value : background.value) + ';padding:1px 3px;margin:2px ' + (i < post.tagi.length - 1 ? '4px' : '0') + ' 2px ' + (i > 0 ? '4px' : '0') + ';border-radius:4px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:' + (textSize.value - 2) + 'px;margin-right:3px;"><path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>' + post.tagi[i] + '</span>';
+			html += '<span style="display:inline-flex;align-items:center;' + (kolorTla() === 'transparent' ? 'border:1px solid ' + textColor.value + ';color:' + textColor.value + ';' : 'background:' + textColor.value + ';color:' + background.value + ';') + 'padding:1px 3px;margin:2px ' + (i < post.tagi.length - 1 ? '4px' : '0') + ' 2px ' + (i > 0 ? '4px' : '0') + ';border-radius:4px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:' + (textSize.value - 2) + 'px;margin-right:3px;"><path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>' + post.tagi[i] + '</span>';
 		}
 				
 		html += '</div>';
@@ -329,12 +329,12 @@ function podgladaj() {
 	podglad.appendChild(elem);
 }
 
-const wartosci = ['widgetsTitle', 'numberOfPosts', 'label', 'display', 'width', 'rounding', 'background', 'padding', 'lineHeight', 'borderWidth', 'borderStyle', 'borderColor', 'thumbnail', 'thumbnailSize', 'thumbnailRounding', 'noThumbnail', 'showTitle', 'titleFont', 'titleSize', 'titleColor', 'showInfo', 'showAuthor', 'showComments', 'showDate', 'showLabels', 'numberOfLabels', 'excerptLength', 'excerptAlign', 'textFont', 'textSize', 'textColor', 'blogURL', 'hideOnHome', 'hideOnPosts', 'hideOnStatic', 'hideOnLabel', 'hideOnSearch', 'hideOnArchive', 'kp'];
+const wartosci = ['widgetsTitle', 'numberOfPosts', 'label', 'display', 'width', 'rounding', 'background', 'padding', 'lineHeight', 'borderWidth', 'borderStyle', 'borderColor', 'thumbnail', 'thumbnailSize', 'thumbnailRounding', 'noThumbnail', 'showTitle', 'titleFont', 'titleSize', 'boldTitle', 'titleColor', 'showInfo', 'showAuthor', 'showComments', 'showDate', 'showLabels', 'numberOfLabels', 'excerptLength', 'excerptAlign', 'textFont', 'textSize', 'textColor', 'blogURL', 'hideOnHome', 'hideOnPosts', 'hideOnStatic', 'hideOnLabel', 'hideOnSearch', 'hideOnArchive', 'kp'];
 
 var domyslne = {};
 
 wartosci.forEach(w => {
-	if (w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
+	if (w === 'boldTitle' || w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 		domyslne[w] = document.getElementById(w).checked ? true : false;
 	} else if (w === 'background') {
 		domyslne[w] = kolorTla();
@@ -358,7 +358,7 @@ function generujKod() {
 	}
 	kod += ' showTitle="' + showTitle.value + '"';
 	if (showTitle.value !== 'none') {
-		kod += ' titleFont="' + titleFont.value + '" titleSize="' + titleSize.value + '" titleColor="' + titleColor.value + '"';
+		kod += ' titleFont="' + titleFont.value + '" titleSize="' + titleSize.value + '" boldTitle="' + (boldTitle.checked ? 'true' : 'false') + '" titleColor="' + titleColor.value + '"';
 	}
 	let inPok = showInfo.value === 'none' || (!showAuthor.checked && !showComments.checked && !showDate.checked) ? false : true;
 	kod += ' showInfo="' + (inPok ? showInfo.value : 'none') + '"';
@@ -375,7 +375,7 @@ function generujKod() {
 	}
 	kod += ' textFont="' + textFont.value + '" textSize="' + textSize.value + '" textColor="' + textColor.value + '"';
 	
-	if (testujURL()) kod += ' blogURL="' + blogURL.value + '"';
+	if (testujURL()) kod += ' blogURL="' + encodeURIComponent(blogURL.value) + '"';
 
 	if (awans.querySelector('input[type="checkbox"]:checked')) {
 		let kap = '';
@@ -559,7 +559,7 @@ function zrobZapis() {
 	}
 		
 	wartosci.forEach(w => {
-		if (w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
+		if (w === 'boldTitle' || w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 			obi[w] = document.getElementById(w).checked ? true : false;
 		} else if (w === 'background') {
 			obi[w] = kolorTla();
@@ -593,7 +593,7 @@ function zrobZapis() {
 
 function przywrocWidget(obi) {
 	wartosci.forEach(w => {
-		if (w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
+		if (w === 'boldTitle' || w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 			document.getElementById(w).checked = (typeof obi[w] == 'boolean') ? obi[w] : domyslne[w];
 		} else if (w === 'background') {
 			if (obi[w] === 'transparent') {
@@ -612,7 +612,7 @@ function przywrocWidget(obi) {
 		}
 	});
 	if (!testujURL()) blogURL.value = '';
-	blogUrlOnczendz();
+	blogURL.onchange();
 	oKurwa.style.background = podglad.style.background = kp.value;
 	generator.querySelectorAll('[rozwin]:not(.numeromat)').forEach(r => {
 		if (r.value === 'none' || r.value === 'vertical') {
@@ -648,7 +648,7 @@ function skryptNaObiekt(skr) {
 		wartosci.forEach(w => {
 			if (skr.indexOf(w + '="') >= 8) {
 				let wartosc = skr.split(w + '="')[1].split('"')[0];
-				if (w === 'label' || w === 'noThumbnail') wartosc = decodeURIComponent(wartosc);
+				if (w === 'label' || w === 'noThumbnail' || w === 'blogURL') wartosc = decodeURIComponent(wartosc);
 				if (wartosc === 'true') wartosc = true;
 				if (wartosc === 'false') wartosc = false;
 				obi[w] = wartosc;
@@ -769,7 +769,6 @@ function kolorTla() {
 
 kp.oninput = function() {
 	oKurwa.style.background = podglad.style.background = this.value;
-	podgladaj();
 }
 
 pokazMenu.onclick = function() {
@@ -819,11 +818,20 @@ const pedaly = [{
 	'nzw' : 'dyg',
 	'link' : 'https://digg.com/submit?url=' + url
 }, {
-	'nzw' : 'lacap',
-	'link' : 'https://wa.me/?text=' + url
-}, {
 	'nzw' : 'tumblr',
 	'link' : 'https://www.tumblr.com/share?t=' + tytul + '&u=' + url + '&v=3'
+}, {
+	'nzw' : 'wordpres',
+	'link' : 'http://wordpress.com/wp-admin/press-this.php?u=' + url + '&t=' + tytul + '&s=' + tytul + '&i='
+}, {
+	'nzw' : 'gmail',
+	'link' : 'https://mail.google.com/mail/?view=cm&to=&su=' + tytul + '&body=' + url + '&bcc=&cc='
+}, {
+	'nzw' : 'meil',
+	'link' : 'mailto:mail@example.com?subject=' + tytul + '&body=' + url
+}, {
+	'nzw' : 'ewernot',
+	'link' : 'http://www.evernote.com/clip.action?title=' + tytul + '&url=' + url
 }];
 	
 pedaly.forEach(p => {
@@ -883,7 +891,7 @@ function testURL(url) {
 	s.src = url + '/feeds/posts/summary?alt=json-in-script&callback=kurwaMac&start-index=1&max-results=1';
 }
 
-function blogUrlOninput() {
+blogURL.addEventListener('input', function() {
 	if (blogURL.value) {
 		sprawdz.classList.remove('nieaktywny');
 		sprawdz.setAttribute('tooltip', 'Validate the URL');
@@ -891,11 +899,9 @@ function blogUrlOninput() {
 		sprawdz.classList.add('nieaktywny');
 		sprawdz.setAttribute('tooltip', '');
 	}
-}
+});
 
-blogURL.addEventListener('input', blogUrlOninput);
-
-blogURL.onchange = blogUrlOnczendz = function() {
+blogURL.onchange = function() {
 	sprawdz.classList.add('nieaktywny');
 	sprawdz.setAttribute('tooltip', '');
 	blogURLinfocus.style.display = 'none';

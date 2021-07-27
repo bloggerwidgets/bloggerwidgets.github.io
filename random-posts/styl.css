@@ -125,6 +125,7 @@ header h1 {margin:0 0 7px 0;padding-top:1px;font-size:22px;line-height:1.2;color
 .dodatkoweOpcjeFoto {display:flex;align-items:center;margin-top:5px;}
 #brakObrazka {max-width:40px;max-height:40px;}
 .brakObrDiw {display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:10px;}
+#fotInf {height:40px;width:100%;background:#ffc4c4;font-size:13px;line-height:1;text-align:center;}
 .wgrajFotOpcja {cursor:pointer;background:#333333;padding:2px;border-radius:4px;display:inline-block;border:2px outset #3d3d3d;}
 .wgrajFotOpcja svg {height:17px;fill:white;}
 .wgrajFotOpcja input {display:none;}

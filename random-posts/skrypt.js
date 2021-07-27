@@ -34,8 +34,10 @@ generator.querySelectorAll('input[type="range"].numeromat').forEach(inp => {
 		}
 		let proca = 100 * (this.value - this.min) / (this.max - this.min);
 		this.style.background = 'linear-gradient(to right, #808080 0%, #808080 ' + proca + '%, white ' + proca + '%, white 100%)';
-		this.pokaz.style.left = 29 - (this.wysw.offsetWidth / 2) + ((this.offsetWidth - 14) * proca / 100) + 'px';
+		this.pokaz.style.left = 33 - (this.wysw.offsetWidth / 2) + ((this.offsetWidth - 22) * proca / 100) + 'px';
 	}
+		
+		31
 		
 		function napierdalaj() {
 			if (inp.plus.classList.contains('wcisniety') && Number(inp.value) < max) {

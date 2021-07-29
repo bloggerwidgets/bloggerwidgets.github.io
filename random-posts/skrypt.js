@@ -128,11 +128,11 @@ window.addEventListener(window.matchMedia("(pointer:coarse)").matches ? 'touchen
 });
 
 generator.querySelectorAll('.zawijka').forEach(r => {
-	r.wys = r.offsetHeight + (r.offsetHeight * 10 / 100);
+	r.wys = r.offsetHeight + (r.offsetHeight / 10);
 	if (r.getAttribute('start') === 'schowaj') {
 		r.style.maxHeight = '0px';
 	} else {
-		r.style.maxHeight = r.wys;
+		r.style.maxHeight = r.wys + 'px';
 	}
 });
 

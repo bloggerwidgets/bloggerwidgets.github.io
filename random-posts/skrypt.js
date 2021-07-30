@@ -192,7 +192,7 @@ noThumbnail.onchange = function() {
 	sprawdzObraz.setAttribute('tooltip', '');
 	brakObrazka.style.display = 'none';
 	fotInf.style.display = 'block';
-	fotInf.innerHTML = '<div class="ladowanie"></div>';
+	fotInf.innerHTML = '<div class="ladowanie" style="margin-top:10px;"></div>';
 	fotInf.title = 'loading image...';
 	brakObrazka.src = this.value;
 }
@@ -744,6 +744,20 @@ przywrocUst.onclick = function() {
 	}
 }
 
+pokazPomoc.onclick = function() {
+	pomoc.style.display = 'flex';
+	setTimeout(function() {
+		pomocOkno.style.maxHeight = '100vh';
+	}, 10);
+}
+
+pomocZamknij.onclick = pomoc.onclick = function() {
+	pomocOkno.style.maxHeight = '0';
+	setTimeout(function() {
+		pomoc.style.display = 'none';
+	}, 1000);
+}
+
 wyswietlZapisy();
 
 (function() {
@@ -979,3 +993,10 @@ document.querySelectorAll('[tooltip]').forEach(t => {
 		wsk.style.top = (e.pageY + wyrDolY + wsk.offsetHeight + 10 > window.scrollY + window.innerHeight ? e.pageY - wyrGorY - wsk.offsetHeight : e.pageY + wyrDolY) + 'px';
 	});
 });
+
+(function() {
+	let im = new Image();
+	im.style.display = 'none';
+	document.body.appendChild(im);
+	im.src = 'https://counter5.stat.ovh/private/freecounterstat.php?c=85gk1ad85pzhe1hwdb6qc8pg6hlbfn3t';
+})()

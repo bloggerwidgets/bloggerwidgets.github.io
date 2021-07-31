@@ -751,7 +751,7 @@ pokazPomoc.onclick = function() {
 	}, 10);
 }
 
-pomocZamknij.onclick = pomoc.onclick = function() {
+pomocZamknij.onclick = function() {
 	pomocOkno.style.maxHeight = '0';
 	setTimeout(function() {
 		pomoc.style.display = 'none';

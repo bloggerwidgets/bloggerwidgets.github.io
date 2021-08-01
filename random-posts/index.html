@@ -196,7 +196,7 @@
 								<div class="opcja">
 									<div class="tytul">Box width:</div>
 									<div class="input">
-										<label><input id="width" type="range" value="180" min="50" max="500" step="1" jedn="px" class="numeromat"><label>
+										<label><input id="boxWidth" type="range" value="180" min="50" max="500" step="1" jedn="px" class="numeromat"><label>
 									</div>
 									<span class="pytajnik" tooltip="How wide should each post container be?"></span>
 								</div>
@@ -206,7 +206,7 @@
 								<div class="tytul">Box background:</div>
 								<div class="input">
 									<label class="tloWybor zaznaczony" wartosc="kolor" tooltip="Choose any color">
-										<input id="background" type="color" value="#3d3d3d">
+										<input id="boxBackground" type="color" value="#3d3d3d">
 									</label>
 									<span class="tloWybor" wartosc="transparent" tooltip="Transparent">
 										<span class="przezro"></span>
@@ -218,7 +218,7 @@
 							<div class="opcja">
 								<div class="tytul">Box rounding:</div>
 								<div class="input">
-									<label><input id="rounding" type="range" value="5" min="0" max="100" step="1" jedn="%" class="numeromat"></label>
+									<label><input id="boxRounding" type="range" value="5" min="0" max="100" step="1" jedn="%" class="numeromat"></label>
 								</div>
 								<span class="pytajnik" tooltip="Here you can set the rounding of post containers"></span>
 							</div>
@@ -226,7 +226,7 @@
 							<div class="opcja">
 								<div class="tytul">Box padding:</div>
 								<div class="input">
-									<label><input id="padding" type="range" value="5" min="0" max="50" step="1" jedn="px" class="numeromat"></label>
+									<label><input id="boxPadding" type="range" value="5" min="0" max="50" step="1" jedn="px" class="numeromat"></label>
 								</div>
 								<span class="pytajnik" tooltip="Set what padding you want each random post to have"></span>
 							</div>
@@ -269,14 +269,14 @@
 											<option value="groove">Groove</option>
 										</select>
 									</div>
-									<span class="pytajnik" tooltip='Choose where to display the thumbnail of the post image, or "none" to not display it at all'></span>
+									<span class="pytajnik" tooltip="Select a border for post containers"></span>
 								</div>
 							</div>
 							
 							<div class="opcja">
-								<div class="tytul">Show thumbnail:</div>
+								<div class="tytul">Show image:</div>
 								<div class="input">
-									<select id="thumbnail" rozwin="showThumbnail">
+									<select id="showImage" rozwin="showThumbnail">
 										<option value="left">Left</option>
 										<option value="center">Center</option>
 										<option value="right">Right</option>
@@ -288,27 +288,27 @@
 							
 							<div class="zawijka" for="showThumbnail">
 								<div class="opcja">
-									<div class="tytul">Thumbnail size:</div>
+									<div class="tytul">Image size:</div>
 									<div class="input">
-										<label><input id="thumbnailSize" type="range" value="72" min="0" max="300" step="1" jedn="px" class="numeromat"></label>
+										<label><input id="imageSize" type="range" value="72" min="0" max="300" step="1" jedn="px" class="numeromat"></label>
 									</div>
 									<span class="pytajnik" tooltip="Set the image size"></span>
 								</div>
 								
 								<div class="opcja">
-									<div class="tytul">Thumbnail rounding:</div>
+									<div class="tytul">Image rounding:</div>
 									<div class="input">
-										<label><input id="thumbnailRounding" type="range" value="10" min="0" max="50" step="1" jedn="%" class="numeromat"></label>
+										<label><input id="imageRounding" type="range" value="10" min="0" max="50" step="1" jedn="%" class="numeromat"></label>
 									</div>
 									<span class="pytajnik" tooltip="Set the roundness of the thumbnail image of the post"></span>
 								</div>
 								
 								<div class="opcja">
-									<div class="tytul">No thumbnail:</div>
+									<div class="tytul">No Image:</div>
 									<div class="input">
 									
 										<div style="display:flex;align-items:center;">
-											<input id="noThumbnail" type="text" placeholder="Enter Image URL..." value="https://1.bp.blogspot.com/-agSKfOT_mcg/YOdAzPGnEjI/AAAAAAAAAdg/sXjDeQtO9UUc4_tOgPANgH2dTry4BJYIACLcBGAsYHQ/s0/no-image.jpg" class="linownia"><span id="sprawdzObraz" tooltip="" class="urlTest nieaktywny"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>
+											<input id="noImage" type="text" placeholder="Enter Image URL..." value="https://1.bp.blogspot.com/-agSKfOT_mcg/YOdAzPGnEjI/AAAAAAAAAdg/sXjDeQtO9UUc4_tOgPANgH2dTry4BJYIACLcBGAsYHQ/s0/no-image.jpg" class="linownia"><span id="sprawdzObraz" tooltip="" class="urlTest nieaktywny"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>
 										</div>
 									</div>
 									<div class="dodatkoweOpcjeFoto">

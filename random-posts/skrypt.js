@@ -177,16 +177,16 @@ awans.querySelectorAll('input').forEach(inp => {
 	}
 })
 
-brakObrazka.src = noThumbnail.value;
+brakObrazka.src = noImage.value;
 brakObrazka.onerror = function() {
 	this.style.display = 'none';
 	fotInf.style.display = 'block';
 	fotInf.textContent = 'I can\'t load image';
 	fotInf.title = 'I can\'t load this image... 😟';
-	noThumbnail.disabled = false;
+	noImage.disabled = false;
 }
 
-noThumbnail.onchange = function() {
+noImage.onchange = function() {
 	this.disabled = true;
 	sprawdzObraz.classList.add('nieaktywny');
 	sprawdzObraz.setAttribute('tooltip', '');
@@ -201,17 +201,17 @@ brakObrazka.onload = function() {
 	fotInf.style.display = 'none';
 	fotInf.title = '';
 	brakObrazka.style.display = 'block';
-	noThumbnail.disabled = false;
+	noImage.disabled = false;
 }
 
-noThumbnail.oninput = function() {
+noImage.oninput = function() {
 	sprawdzObraz.classList.remove('nieaktywny');
 	sprawdzObraz.setAttribute('tooltip', 'Validate the photo URL');
 }
 
 przywrocFoto.onclick = function() {
-	noThumbnail.value = domyslne.noThumbnail;
-	brakObrazka.src = domyslne.noThumbnail;
+	noImage.value = domyslne.noImage;
+	brakObrazka.src = domyslne.noImage;
 	jebKodem();
 }
 
@@ -232,10 +232,10 @@ wlasnyObr.oninput = function(e) {
 					kanwas.height = nowyHeight;
 					kontekst.drawImage(obraz, 0, 0, kanwas.width, kanwas.height);
 					let pomniejszonyURI = kanwas.toDataURL('image/png');
-					noThumbnail.value = pomniejszonyURI;
+					noImage.value = pomniejszonyURI;
 					brakObrazka.src = pomniejszonyURI;
 				} else {
-					noThumbnail.value = obraz.src;
+					noImage.value = obraz.src;
 					brakObrazka.src = obraz.src;
 				}
 				wlasnyObr.value = '';
@@ -272,28 +272,28 @@ function podgladaj() {
 	} else {
 		margen = false;
 	}
-	if (thumbnail.value === 'center') {
+	if (showImage.value === 'center') {
 		obStyl += 'margin:0 auto ' + (margen ? '5px' : '0') + ';';
 	} else {
-		obStyl += 'float:' + thumbnail.value + ';margin:' + (thumbnail.value === 'right' ? '0 0 ' + (margen ? '5px 5px' : '0 0') + ';' : '0 ' + (margen ? '5px 5px' : '0 0') + ' 0;');
+		obStyl += 'float:' + showImage.value + ';margin:' + (showImage.value === 'right' ? '0 0 ' + (margen ? '5px 5px' : '0 0') + ';' : '0 ' + (margen ? '5px 5px' : '0 0') + ' 0;');
 	}
-	obStyl += 'width:' + thumbnailSize.value + 'px;height:' + thumbnailSize.value + 'px;max-width:100%;max-height:' + (display.value === 'horizontal' ? Number(width.value) - (2 * (Number(padding.value) + Number(borderWidth.value))) : podglad.clientWidth - 14 - (2 * (Number(padding.value) + Number(borderWidth.value)))) + 'px;padding:0;border:0;border-radius:' + thumbnailRounding.value + '%;';
+	obStyl += 'width:' + imageSize.value + 'px;height:' + imageSize.value + 'px;max-width:100%;max-height:' + (display.value === 'horizontal' ? Number(boxWidth.value) - (2 * (Number(boxPadding.value) + Number(borderWidth.value))) : podglad.clientWidth - 14 - (2 * (Number(boxPadding.value) + Number(borderWidth.value)))) + 'px;padding:0;border:0;border-radius:' + imageRounding.value + '%;';
 	let margines = Math.round(textSize.value / 5);
 		
 	elem.style.border = borderWidth.value + 'px ' + borderStyle.value + ' ' + borderColor.value;
 	elem.style.fontSize = textSize.value + 'px';
 	elem.style.color = textColor.value;
 	elem.style.background = kolorTla();
-	elem.style.padding = padding.value + 'px';
+	elem.style.padding = boxPadding.value + 'px';
 	elem.style.lineHeight = lineHeight.value;
 	elem.style.cursor = 'pointer';
 	elem.style.fontFamily = textFont.value;
 	elem.style.overflow = 'hidden';
 	elem.style.textDecoration = 'none';
-	elem.style.borderRadius = rounding.value + 'px';
+	elem.style.borderRadius = boxRounding.value + 'px';
 	if (display.value === 'horizontal') {
 		elem.style.display = 'inline-block';
-		elem.style.width = width.value + 'px';
+		elem.style.width = boxWidth.value + 'px';
 	} else {
 		elem.style.display = 'block';
 	}
@@ -301,7 +301,7 @@ function podgladaj() {
 			
 	let html = '';
 			
-	if (thumbnail.value !== 'none') html += '<div style="' + obStyl + '"><img src="' + post.obrazek + '" style="width:' + (thumbnailSize.value - Math.round(thumbnailSize.value / 7)) + 'px;"></div>';
+	if (showImage.value !== 'none') html += '<div style="' + obStyl + '"><img src="' + post.obrazek + '" style="width:' + (imageSize.value - Math.round(imageSize.value / 7)) + 'px;"></div>';
 	if (showTitle.value !== 'none') html += '<div style="text-align:' + showTitle.value + ';font-size:' + titleSize.value + 'px;' + (boldTitle.checked ? 'font-weight:bold;' : '') + 'color:' + titleColor.value + ';font-family:' + titleFont.value + ';' + ((showInfo.value !== 'none' && (showAuthor.checked || showDate.checked || showComments.checked)) || (showLabels.value !== 'none' && post.tagi.length) || excerptLength.value > 0 ? 'margin-bottom:' + Math.round(titleSize.value / 5) + 'px;' : '') + '">' + post.tytul + '</div>';
 	if (showInfo.value !== 'none' && (showAuthor.checked || showDate.checked || showComments.checked)) {
 		html += '<div style="text-align:' + showInfo.value + ';' + ((showLabels.value !== 'none' && post.tagi.length) || excerptLength.value > 0 ? 'margin-bottom:' + margines + 'px;' : '') + '">';
@@ -319,7 +319,7 @@ function podgladaj() {
 		html += '<div style="text-align:' + showLabels.value + ';' + (excerptLength.value > 0 ? 'margin-bottom:' + margines + 'px;': '') + '">';
 			
 		for (let i=0; i<post.tagi.length && i<numberOfLabels.value; i++) {
-			html += '<span style="display:inline-flex;align-items:center;' + (kolorTla() === 'transparent' ? 'border:1px solid ' + textColor.value + ';color:' + textColor.value + ';' : 'background:' + textColor.value + ';color:' + background.value + ';') + 'padding:1px 3px;margin:2px ' + (i < post.tagi.length - 1 ? '4px' : '0') + ' 2px ' + (i > 0 ? '4px' : '0') + ';border-radius:4px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:' + (textSize.value - 2) + 'px;margin-right:3px;"><path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>' + post.tagi[i] + '</span>';
+			html += '<span style="display:inline-flex;align-items:center;' + (kolorTla() === 'transparent' ? 'border:1px solid ' + textColor.value + ';color:' + textColor.value + ';' : 'background:' + textColor.value + ';color:' + boxBackground.value + ';') + 'padding:1px 3px;margin:2px ' + (i < post.tagi.length - 1 ? '4px' : '0') + ' 2px ' + (i > 0 ? '4px' : '0') + ';border-radius:4px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:' + (textSize.value - 2) + 'px;margin-right:3px;"><path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>' + post.tagi[i] + '</span>';
 		}
 				
 		html += '</div>';
@@ -332,14 +332,14 @@ function podgladaj() {
 	podglad.appendChild(elem);
 }
 
-const wartosci = ['widgetsTitle', 'numberOfPosts', 'label', 'display', 'width', 'rounding', 'background', 'padding', 'lineHeight', 'borderWidth', 'borderStyle', 'borderColor', 'thumbnail', 'thumbnailSize', 'thumbnailRounding', 'noThumbnail', 'showTitle', 'titleFont', 'titleSize', 'boldTitle', 'titleColor', 'showInfo', 'showAuthor', 'showComments', 'showDate', 'showLabels', 'numberOfLabels', 'excerptLength', 'excerptAlign', 'textFont', 'textSize', 'textColor', 'blogURL', 'hideOnHome', 'hideOnPosts', 'hideOnStatic', 'hideOnLabel', 'hideOnSearch', 'hideOnArchive', 'kp'];
+const wartosci = ['widgetsTitle', 'numberOfPosts', 'label', 'display', 'boxWidth', 'boxRounding', 'boxBackground', 'boxPadding', 'lineHeight', 'borderWidth', 'borderStyle', 'borderColor', 'showImage', 'imageSize', 'imageRounding', 'noImage', 'showTitle', 'titleFont', 'titleSize', 'boldTitle', 'titleColor', 'showInfo', 'showAuthor', 'showComments', 'showDate', 'showLabels', 'numberOfLabels', 'excerptLength', 'excerptAlign', 'textFont', 'textSize', 'textColor', 'blogURL', 'hideOnHome', 'hideOnPosts', 'hideOnStatic', 'hideOnLabel', 'hideOnSearch', 'hideOnArchive', 'kp'];
 
 var domyslne = {};
 
 wartosci.forEach(w => {
 	if (w === 'boldTitle' || w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 		domyslne[w] = document.getElementById(w).checked ? true : false;
-	} else if (w === 'background') {
+	} else if (w === 'boxBackground') {
 		domyslne[w] = kolorTla();
 	} else {
 		domyslne[w] = document.getElementById(w).value;
@@ -349,15 +349,15 @@ wartosci.forEach(w => {
 function generujKod() {
 	let kod = '<script numberOfPosts="' + numberOfPosts.value + '" label="' + (label.value ? encodeURIComponent(label.value) : 'none') + '" display="' + display.value + '"';
 	if (display.value === 'horizontal') {
-		kod += ' width="' + width.value + '"';
+		kod += ' boxWidth="' + boxWidth.value + '"';
 	}
-	kod += ' rounding="' + rounding.value + '" background="' + kolorTla() + '" padding="' + padding.value + '" lineHeight="' + lineHeight.value + '" borderWidth="' + borderWidth.value + '"';
+	kod += ' boxRounding="' + boxRounding.value + '" boxBackground="' + kolorTla() + '" boxPadding="' + boxPadding.value + '" lineHeight="' + lineHeight.value + '" borderWidth="' + borderWidth.value + '"';
 	if (borderWidth.value !== '0') {
 		kod += ' borderStyle="' + borderStyle.value + '" borderColor="' + borderColor.value + '"';
 	}
-	kod += ' thumbnail="' + thumbnail.value + '"';
-	if (thumbnail.value !== 'none') {
-		kod += ' thumbnailSize="' + thumbnailSize.value + '" thumbnailRounding="' + thumbnailRounding.value + '" noThumbnail="' + (noThumbnail.value ? encodeURIComponent(noThumbnail.value) : domyslne.noThumbnail) + '"';
+	kod += ' showImage="' + showImage.value + '"';
+	if (showImage.value !== 'none') {
+		kod += ' imageSize="' + imageSize.value + '" imageRounding="' + imageRounding.value + '" noImage="' + (noImage.value ? encodeURIComponent(noImage.value) : domyslne.noImage) + '"';
 	}
 	kod += ' showTitle="' + showTitle.value + '"';
 	if (showTitle.value !== 'none') {
@@ -391,7 +391,7 @@ function generujKod() {
 		kap = kap.substring(0, kap.length-1);
 		kod += ' hide="' + kap + '"'
 	}
-	kod += ' async src="https://cdn.jsdelivr.net/gh/bloggerwidgets/scripts@1.1.5/randomposts.js"><\/script>';
+	kod += ' async src="https://cdn.jsdelivr.net/gh/bloggerwidgets/scripts@1.1.6/randomposts.js"><\/script>';
 	return kod;
 }
 
@@ -566,7 +566,7 @@ function zrobZapis() {
 	wartosci.forEach(w => {
 		if (w === 'boldTitle' || w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 			obi[w] = document.getElementById(w).checked ? true : false;
-		} else if (w === 'background') {
+		} else if (w === 'boxBackground') {
 			obi[w] = kolorTla();
 		} else if (w === 'blogURL') {
 			obi.blogURL = testujURL() ? blogURL.value : '';
@@ -600,13 +600,13 @@ function przywrocWidget(obi) {
 	wartosci.forEach(w => {
 		if (w === 'boldTitle' || w === 'showAuthor' || w === 'showComments' || w === 'showDate' || w === 'hideOnHome' || w === 'hideOnPosts' || w === 'hideOnStatic' || w === 'hideOnLabel' || w === 'hideOnSearch' || w === 'hideOnArchive') {
 			document.getElementById(w).checked = (typeof obi[w] == 'boolean') ? obi[w] : domyslne[w];
-		} else if (w === 'background') {
+		} else if (w === 'boxBackground') {
 			if (obi[w] === 'transparent') {
-				background.value = domyslne.background;
+				boxBackground.value = domyslne.boxBackground;
 				document.querySelector('.tloWybor[wartosc="kolor"]').classList.remove('zaznaczony');
 				document.querySelector('.tloWybor[wartosc="transparent"]').classList.add('zaznaczony');
 			} else {
-				background.value = obi[w];
+				boxBackground.value = obi[w];
 				document.querySelector('.tloWybor[wartosc="transparent"]').classList.remove('zaznaczony');
 				document.querySelector('.tloWybor[wartosc="kolor"]').classList.add('zaznaczony');
 			}
@@ -641,7 +641,7 @@ function przywrocWidget(obi) {
 	label.oninput();
 	podgladaj();
 	jebKodem();
-	brakObrazka.src = noThumbnail.value;
+	brakObrazka.src = noImage.value;
 }
 
 function skryptNaObiekt(skr) {
@@ -653,7 +653,7 @@ function skryptNaObiekt(skr) {
 		wartosci.forEach(w => {
 			if (skr.indexOf(w + '="') >= 8) {
 				let wartosc = skr.split(w + '="')[1].split('"')[0];
-				if (w === 'label' || w === 'noThumbnail' || w === 'blogURL') wartosc = decodeURIComponent(wartosc);
+				if (w === 'label' || w === 'noImage' || w === 'blogURL') wartosc = decodeURIComponent(wartosc);
 				if (wartosc === 'true') wartosc = true;
 				if (wartosc === 'false') wartosc = false;
 				obi[w] = wartosc;
@@ -780,7 +780,7 @@ wyswietlZapisy();
 function kolorTla() {
 	let zazn = document.querySelector('.tloWybor.zaznaczony');
 	if (zazn.getAttribute('wartosc') === 'kolor') {
-		return background.value;
+		return boxBackground.value;
 	} else {
 		return 'transparent';
 	}

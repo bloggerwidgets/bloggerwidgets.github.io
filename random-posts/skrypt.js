@@ -993,10 +993,3 @@ document.querySelectorAll('[tooltip]').forEach(t => {
 		wsk.style.top = (e.pageY + wyrDolY + wsk.offsetHeight + 10 > window.scrollY + window.innerHeight ? e.pageY - wyrGorY - wsk.offsetHeight : e.pageY + wyrDolY) + 'px';
 	});
 });
-
-(function() {
-	let im = new Image();
-	im.style.display = 'none';
-	document.body.appendChild(im);
-	im.src = 'https://counter5.stat.ovh/private/freecounterstat.php?c=85gk1ad85pzhe1hwdb6qc8pg6hlbfn3t';
-})()

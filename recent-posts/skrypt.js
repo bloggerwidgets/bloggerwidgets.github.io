@@ -391,7 +391,7 @@ function generujKod() {
 		kap = kap.substring(0, kap.length-1);
 		kod += ' hide="' + kap + '"'
 	}
-	kod += ' async src="https://cdn.jsdelivr.net/gh/bloggerwidgets/scripts/recentposts.js"><\/script>';
+	kod += ' async src="https://cdn.jsdelivr.net/gh/bloggerwidgets/scripts@main/recentposts.js"><\/script>';
 	return kod;
 }
 
